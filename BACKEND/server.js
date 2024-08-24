@@ -7,7 +7,9 @@ const cookie_parser = require("cookie-parser");
 const mongoose = require('mongoose');
 const session = require('express-session');
 
+
 //Ash imports 
+const authRoutes = require('./routes/authRoutes');
 
 
 
@@ -35,8 +37,7 @@ const session = require('express-session');
 
 //config imports
 const app = express();
-const port = process.env.PORT || 3001;
-
+const port = process.env.PORT;
 
 //Configuration
 app.use(cors({
@@ -46,6 +47,13 @@ app.use(cors({
 app.use(body_parser.json());
 app.use(body_parser.urlencoded({extended : true}));
 app.use(express.json());
+app.use(cookie_parser());
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave : false,
+  saveUninitialized: true,
+  cookie : {secure : true} //set true while deployment 
+}));
 
 const client = new AssemblyAI({
   apiKey: "(your-api-key)",
@@ -69,7 +77,11 @@ app.post("/transcribe", async (req, res) => {
 
 
 //database
-
+mongoose.connect('mongodb://127.0.0.1:27017/SIH').then(() => {
+  console.log("Mongo Connected to SIH database");
+}).catch((error) => {
+  console.error("Error in connecting Mongo" , error);
+});
 
 
 
@@ -80,6 +92,21 @@ app.post("/transcribe", async (req, res) => {
 //-----------------------Routes-------------------------------
 
 
+//Ash routes
+app.use('/api/auth', authRoutes);
+
+
+
+
+
+//Shwets routes
+
+
+
+
+
+
+//JOsh routes
 
 
 

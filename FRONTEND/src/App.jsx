@@ -1,7 +1,7 @@
 //<------------------IMPORTS SECTION ---------------------------->
 
 //Standard Imports
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 
@@ -48,8 +48,8 @@ import './App.css';
 
 
 //Ashmit imports
-
-
+import Login from './Authentication/Login';
+import Signup from './Authentication/Signup';
 
 
 
@@ -57,7 +57,32 @@ import './App.css';
 
 
 const  App = () =>  {
-  const [count, setCount] = useState(0)
+  const [isAuthenticated , setisAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      try{
+        const response = await fetch('http://localhost:3000/api/auth/protected',{
+          credentials : 'include'
+        });
+        if(response.status === 200){
+          setisAuthenticated(true);
+        }
+      }
+      catch(err){
+        console.error("Error in authenticated ", err);
+      }
+    };
+     checkAuth();
+  }, []);
+
+  const handleLogin = () => {
+    setisAuthenticated(true);
+  }
+
+  const handleLogout = () => {
+    setisAuthenticated(false);
+  }
 
   return (
     <>
@@ -89,8 +114,8 @@ const  App = () =>  {
 
 
     {/* Ashmit Routes   */}
-
-
+    <Route path='/login' element={<Login onLogin = {handleLogin}/>}/>  
+    <Route path='/signup' element = {<Signup/>}/>
 
 
 
