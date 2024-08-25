@@ -1,0 +1,130 @@
+.login-outer-container {
+    height: 100vh;
+    display: flex;
+    background-color: #e2f4db;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(270deg, #dddddd, #6ce8a8, #52e480, #9afa63);
+    background-size: 800% 800%;
+    animation: gradientChange 10s ease infinite;
+    font-family: Consolas,monaco,monospace;
+}
+
+@keyframes gradientChange {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.login-container {
+    height: 70%;
+    width: 60%;
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0.95);
+    animation: fadeInScale 1s forwards, borderGlow1 2s infinite alternate;
+}
+
+@keyframes fadeInScale {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Keyframes for the border animation */
+@keyframes borderGlow1 {
+    0% {
+        box-shadow: 0 0 10px 2px rgba(0, 255, 0, 0.5);
+        border: 3px solid rgba(0, 255, 0, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 20px 5px rgba(0, 255, 0, 1);
+        border: 3px solid rgba(0, 255, 0, 1);
+    }
+}
+
+.login-left {
+    width: 50%;
+    background-image: url("https://st5.depositphotos.com/67903508/65370/i/450/depositphotos_653708192-stock-photo-vertical-dramatic-shot-railway-trails.jpg");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px 0 0 10px;
+}
+
+.login-left-content {
+    text-align: center;
+    max-width: 80%;
+}
+
+.login-image {
+    width: 60%;
+    margin-bottom: 20px;
+}
+
+.login-left h1 {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.login-description {
+    color: #fff;
+    margin-top: 10px;
+}
+
+.login-right {
+    width: 50%;
+    background-color: hsl(107, 50%, 46%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 50px;
+    border-radius: 0 10px 10px 0;
+}
+
+.login-right h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-input {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-button {
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #2a3b29;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+}
+
+.login-button:hover {
+    background-color: #22482c;
+}
+
+#loginpage-signup-link{
+    text-decoration: none;
+    color: #2a3b29;
+    margin-left:3rem ;
+}

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import "./Signup.css";
+import { Link } from 'react-router-dom';
 
 const Signup = () => {
 
@@ -34,11 +36,13 @@ const Signup = () => {
         <div className="signup-innercontainer">
 
           <div className="signup-leftcontainer">
-            <h1 id='signup-welcome-back'>SignUp to SIH</h1>
+            <h1 id='signup-welcome-back'>Welcome back to WayRails</h1>
+            <Link to="/login"> <button id='signuppage-login-btn'>Log in</button>  </Link>
           </div>
 
           <div className="signup-rightcontainer">
             <form onSubmit={handleSubmit}>
+            <h1 id='signup-createanaccount'>Create An Account</h1>
               <input
                 type="email"
                 name="email"
