@@ -51,7 +51,7 @@ import './App.css';
 import Login from './Authentication/Login';
 import Signup from './Authentication/Signup';
 import Logout from './Authentication/Logout';
-
+import QueryComponent from './QueryComponent/QueryComponent';
 
 
 
@@ -117,6 +117,7 @@ const  App = () =>  {
     <Route path='/login' element={<Login onLogin = {handleLogin}/>}/>  
     <Route path='/logout' element={<Logout onLogout = {handleLogout}/>}/>  
     <Route path='/signup' element = {<Signup/>}/>
+    <Route path='/query' element = {<QueryComponent/>}/>
     
 
 

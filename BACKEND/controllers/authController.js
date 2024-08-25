@@ -6,7 +6,6 @@ require('dotenv').config({path: '.env'});
 app = express();
 
 
-console.log(process.env.SESSION_SECRET);
 const login = async (req, res) => {
     try{
         console.log(req.user);
