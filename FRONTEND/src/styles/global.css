@@ -1,0 +1,107 @@
+/* Reset CSS for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main navbar container */
+.homepage-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #000;
+  padding: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for visibility */
+  transition: background-color 0.3s ease;
+}
+
+/* Navbar list styling */
+.homepage-navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Horizontal layout */
+  align-items: center;
+}
+
+/* Navbar list item styling */
+.homepage-navbar ul li {
+  text-decoration: none;
+  margin-right: 20px; /* Space between list items */
+}
+
+/* Navbar links styling */
+.homepage-navbar li a {
+  font-weight: bold;
+  color: #000; /* Link color */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  text-decoration: none; /* Remove underline */
+  padding: 10px 15px;
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 4px;
+}
+
+.homepage-navbar li a:hover {
+  background-color: #ffd700;
+}
+
+/* Search and cart icons styling */
+.search-icon,
+.cart-icon {
+  color: #000;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+/* Font Awesome icon styling */
+.fa {
+  font-size: 20px;
+}
+
+/* Auth links container styling */
+.auth-links {
+  display: flex;
+  list-style-type: none;
+  margin-left: 20px;
+  align-items: center; /* Center-align the login and signup links */
+}
+
+/* Individual auth link item styling */
+.auth-links li {
+  margin-left: 20px;
+  position: relative; /* Needed for positioning the pseudo-element */
+}
+
+/* Auth link button styling */
+.auth-links li a {
+  display: inline-block;
+  color: #1b2a3c; /* Dark text color */
+  background-color: #ffd700; /* Yellow background */
+  text-decoration: none;
+  padding: 10px 20px;
+  position: relative; /* For positioning the pseudo-element */
+  font-weight: bold; /* Bold font to match other navbar items */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+  z-index: 2; /* Ensures the text stays above the pseudo-element */
+}
+
+/* Before pseudo-element for staggered border effect */
+.auth-links li a::before {
+  content: "";
+  position: absolute;
+  top: 5px; /* Offset to create staggered effect */
+  left: 5px; /* Offset to create staggered effect */
+  right: -5px;
+  bottom: -5px;
+  border: 2px solid #1b2a3c; /* Dark border color */
+  z-index: 1; /* Places the border behind the button */
+}
