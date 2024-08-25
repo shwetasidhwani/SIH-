@@ -10,7 +10,7 @@ const session = require('express-session');
 
 //Ash imports 
 const authRoutes = require('./routes/authRoutes');
-
+const queryRoute = require("./routes/queryRoute");
 
 
 
@@ -94,7 +94,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/SIH').then(() => {
 
 //Ash routes
 app.use('/api/auth', authRoutes);
-
+app.use('/api/llm', queryRoute);
 
 
 
