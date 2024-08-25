@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import "./Login.css";
+import { Link } from 'react-router-dom';
 
 const Login = ({ onLogin }) => {
     const [formValues, setFormValues] = useState({ email: '', password: '' });
@@ -32,8 +33,8 @@ const Login = ({ onLogin }) => {
             <div className="login-left">
                 <div className="login-left-content">
                     
-                    <h1>Welcome back to SIH</h1>
-                    <p className="login-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h1>Welcome back to WayRails</h1>
+                    <p className="login-description">Connecting people..</p>
                 </div>
             </div>
             <div className="login-right">
@@ -56,8 +57,10 @@ const Login = ({ onLogin }) => {
                         placeholder="Enter your password"
                         required
                         className="login-input" />
-
+                        
                     <button type="submit" className="login-button">Sign In</button>
+
+                    <Link to='/signup' id='loginpage-signup-link'> Don't have an account? </Link>
                 </form>
             </div>
         </div>
