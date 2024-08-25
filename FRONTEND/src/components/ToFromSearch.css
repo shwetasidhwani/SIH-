@@ -1,0 +1,63 @@
+/* Container styling similar to the fare calculator */
+.tofrom-container {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Glowy box-shadow effect */
+  }
+  
+  /* Title styling */
+  .tofrom-container h2 {
+    color: #333;
+    font-family: 'Arial', sans-serif; /* Better font */
+    font-size: 24px; /* Font size adjustment */
+    margin-bottom: 20px;
+  }
+  
+  /* Inputs wrapper styling */
+  .station-inputs {
+    display: flex;
+    flex-direction: column; /* Stack inputs vertically */
+    gap: 15px; /* Spacing between inputs */
+  }
+  
+  /* Station selector dropdown styling */
+  .station-selector {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+  }
+  
+  /* Timetable styling */
+  .timetable {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .timetable h3 {
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .timetable ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .timetable li {
+    font-size: 16px;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  

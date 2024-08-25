@@ -92,12 +92,5 @@
     color: #333;
   }
   
-  body {
-    margin: 0;
-    padding: 0;
-    background-color: #e0e0e0; /* Light background color for the whole page */
-    background-image: url("https://memumbai.com/wp-content/uploads/2022/10/mumbailocal.jpg"); /* Add your background image URL here */
-    background-size: cover; /* Make sure the image covers the entire viewport */
-    background-position: center; /* Position the image in the center */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-  }
+  
+  

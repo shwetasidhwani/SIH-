@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./TicketFare.css";
 
 const stations = [
@@ -22,6 +22,23 @@ function TicketFare() {
   const [startStation, setStartStation] = useState("");
   const [endStation, setEndStation] = useState("");
   const [fare, setFare] = useState({ firstClass: null, secondClass: null });
+
+  // Apply custom styles to the body when the component mounts
+  useEffect(() => {
+    const originalBodyStyles = document.body.style;
+    document.body.style.margin = "0";
+    document.body.style.padding = "0";
+    document.body.style.backgroundColor = "#e0e0e0";
+    document.body.style.backgroundImage = 'url("https://memumbai.com/wp-content/uploads/2022/10/mumbailocal.jpg")';
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center";
+    document.body.style.backgroundRepeat = "no-repeat";
+
+    // Cleanup function to revert styles when the component unmounts
+    return () => {
+      document.body.style = originalBodyStyles;
+    };
+  }, []);
 
   const calculateFare = () => {
     const routeKey = `${startStation}-${endStation}`;
