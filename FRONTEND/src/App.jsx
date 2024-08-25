@@ -11,7 +11,7 @@ import "./App.css";
 import HomePage from "./components/HomePage";
 
 //Paritosh Imports
-
+import TicketFare from "./components/TicketFare";
 //Joshua Imports
 
 //Sujal imports
@@ -21,6 +21,7 @@ import Login from "./Authentication/Login";
 import Signup from "./Authentication/Signup";
 import Logout from "./Authentication/Logout";
 import QueryComponent from "./QueryComponent/QueryComponent";
+
 
 const App = () => {
   const [isAuthenticated, setisAuthenticated] = useState(false);
@@ -62,6 +63,7 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
 
           {/* Paritosh Routes */}
+          <Route path="/ticketfare" element={<TicketFare />} />
 
           {/* Joshua Routes  */}
 
