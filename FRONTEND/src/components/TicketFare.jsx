@@ -31,6 +31,7 @@ function TicketFare() {
     document.body.style.backgroundColor = "#e0e0e0";
     document.body.style.backgroundImage = 'url("https://memumbai.com/wp-content/uploads/2022/10/mumbailocal.jpg")';
     document.body.style.backgroundSize = "cover";
+    document.body.style.height = "100%";
     document.body.style.backgroundPosition = "center";
     document.body.style.backgroundRepeat = "no-repeat";
 
