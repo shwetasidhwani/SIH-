@@ -1,3 +1,22 @@
+/* Root for CSS Variables */
+:root {
+  --primary-color: #000; /* Black color */
+  --secondary-color: #87ceeb; /* Light blue color */
+  --dark-text-color: #1b2a3c; /* Dark text color */
+  --background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+  --font-family-primary: Arial, Helvetica, sans-serif;
+  --font-family-secondary: Inter, system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+  --font-size-large: 30px;
+  --font-size-medium: 20px;
+  --font-size-hero: 60px;
+  --font-size-support: 25px;
+  --line-height-hero: 1.2;
+  --line-height-support: 35px;
+  --border-radius: 4px;
+  --transition-speed: 0.3s;
+}
+
 /* Reset CSS for all elements */
 * {
   margin: 0;
@@ -23,18 +42,19 @@
 /* Navbar links styling */
 .homepage-navbar li a {
   font-weight: bold;
-  color: #000; /* Link color */
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
+  color: var(--primary-color);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-medium);
   text-decoration: none; /* Remove underline */
   padding: 10px 15px;
   position: relative;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  border-radius: 4px;
+  transition: background-color var(--transition-speed) ease,
+    color var(--transition-speed) ease;
+  border-radius: var(--border-radius);
 }
 
 .homepage-navbar li a:hover {
-  background-color: #87ceeb;
+  background-color: var(--secondary-color);
 }
 
 /* Auth links container styling */
@@ -53,90 +73,83 @@
 /* Auth link button styling */
 .auth-links li a {
   display: inline-block;
-  color: #1b2a3c; /* Dark text color */
-  background-color: #87ceeb; /* Yellow background */
+  color: var(--dark-text-color);
+  background-color: var(--secondary-color);
   text-decoration: none;
   padding: 10px 20px;
   position: relative; /* For positioning the pseudo-element */
-  font-weight: bold; /* Bold font to match other navbar items */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
-  z-index: 2; /* Ensures the text stays above the pseudo-element */
+  font-weight: bold;
+  transition: background-color var(--transition-speed) ease,
+    color var(--transition-speed) ease;
+  z-index: 2;
 }
 
 /* Before pseudo-element for staggered border effect */
 .auth-links li a::before {
   content: "";
   position: absolute;
-  top: 5px; /* Offset to create staggered effect */
-  left: 5px; /* Offset to create staggered effect */
+  top: 5px;
+  left: 5px;
   right: -5px;
   bottom: -5px;
-  border: 2px solid #1b2a3c; /* Dark border color */
-  z-index: 1; /* Places the border behind the button */
+  border: 2px solid var(--dark-text-color);
+  z-index: 1;
 }
 
 /* Main navbar container */
 .homepage-navbar {
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #000;
+  background-color: var(--background-color);
+  color: var(--primary-color);
   padding: 30px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for visibility */
-  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color var(--transition-speed) ease;
 }
 
 /* Reset for website name */
 .homepage-navbar .website-name {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 30px;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-large);
   font-weight: bold;
-  color: #000; /* Yellow color */
+  color: var(--primary-color);
   margin-left: 70px;
   margin-right: 230px;
-  text-decoration: none; /* Remove underline */
-  position: relative; /* For positioning the pseudo-element */
-  display: inline-block; /* Needed for pseudo-element */
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
 }
 
 .homepage-navbar .website-name a {
   text-decoration: none;
-  color: #000;
+  color: var(--primary-color);
 }
 
 /* Hover effect for website name */
 .homepage-navbar .website-name::after {
-  content: ""; /* Creates a pseudo-element for the underline */
+  content: "";
   position: absolute;
   left: 0;
-  bottom: -5px; /* Position below the text */
+  bottom: -5px;
   width: 100%;
-  height: 4px; /* Thickness of the underline */
-  background-color: #87ceeb; /* Underline color same as text */
-  transform: scaleX(0); /* Initially hidden (collapsed) */
-  transform-origin: left; /* Ensure it scales from the left */
-  transition: transform 0.3s ease; /* Smooth transition */
+  height: 4px;
+  background-color: var(--secondary-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-speed) ease;
 }
 
 .homepage-navbar .website-name:hover::after {
-  transform: scaleX(1); /* Expands underline from left to right on hover */
+  transform: scaleX(1);
 }
 
-/* Add hover effect to change the cursor */
 .homepage-navbar .website-name:hover {
-  cursor: pointer; /* Changes cursor to pointer on hover */
-}
-
-/* Ensure no purple color on links */
-.homepage-navbar li a {
-  text-decoration: none; /* No underline on links */
-  color: #000; /* Link color */
+  cursor: pointer;
 }
 
 .hero {
@@ -145,21 +158,22 @@
   align-items: center;
   justify-content: center;
 }
+
 .hero .hero-content .hero-catchphrase {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 60px;
-  line-height: 1.2;
-  color: #000; /* Black color */
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-hero);
+  line-height: var(--line-height-hero);
+  color: var(--primary-color);
   margin-bottom: 40px;
-  margin-top: 230px;
+  margin-top: 200px;
   text-align: center;
 }
 
 /* Styling for the underlined span */
 .underlined-hero {
-  position: relative; /* For positioning the pseudo-element */
-  display: inline-block; /* Needed for the underline effect */
-  color: #87ceeb; /* Yellow color */
+  position: relative;
+  display: inline-block;
+  color: var(--secondary-color);
 }
 
 /* Underline effect using pseudo-element */
@@ -167,11 +181,11 @@
   content: "";
   position: absolute;
   left: 0;
-  bottom: -5px; /* Position the underline below the text */
+  bottom: -5px;
   width: 100%;
   z-index: -1;
-  height: 5px; /* Thickness of the underline */
-  background-color: #000; /* Color of the underline */
+  height: 5px;
+  background-color: var(--primary-color);
 }
 
 .hero .hero-content .hero-supportphrase {
@@ -180,10 +194,273 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 25px;
-  line-height: 35px;
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-support);
+  line-height: var(--line-height-support);
 }
-/*                     
-.hero .hero-content .hero-supportphrase p {
-  color: #1b2a3c; /* Dark text color */
+
+/*STYLING FOR LOGIN PAGE*/
+/* Login Outer Container Styling */
+.login-outer-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(270deg, #ffffff, #87ceeb, #f0f8ff);
+  background-size: 800% 800%;
+  animation: gradientChange 10s ease infinite;
+  font-family: var(--font-family-secondary);
+}
+
+/* Keyframes for background gradient animation */
+@keyframes gradientChange {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Login Container Styling */
+.login-container {
+  height: 70%;
+  width: 60%;
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  opacity: 0;
+  transform: scale(0.95);
+  background-color: #ffffff; /* White background for the container */
+  animation: fadeInScale 1s forwards;
+  border: 2px solid #87ceeb; /* Sky blue border color */
+}
+
+/* Keyframes for fade-in and scale animation */
+@keyframes fadeInScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Login Left Section Styling */
+.login-left {
+  width: 50%;
+  background-image: url("https://st5.depositphotos.com/67903508/65370/i/450/depositphotos_653708192-stock-photo-vertical-dramatic-shot-railway-trails.jpg");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px 0 0 10px;
+}
+
+.login-left-content {
+  text-align: center;
+  max-width: 80%;
+}
+
+.login-image {
+  width: 60%;
+  margin-bottom: 20px;
+}
+
+.login-left h1 {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.login-description {
+  color: #fff;
+  margin-top: 10px;
+}
+
+/* Login Right Section Styling */
+.login-right {
+  width: 50%;
+  background-color: #f0f8ff; /* Light sky blue background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 50px;
+  border-radius: 0 10px 10px 0;
+}
+
+.login-right h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Login Form Styling */
+.login-form {
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-input {
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Login Button Styling */
+.login-button {
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #000; /* Black background for button */
+  color: #fff; /* White text color */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+}
+
+.login-button:hover {
+  background-color: #333; /* Darker black for hover */
+}
+
+/* Signup Link Styling */
+#loginpage-signup-link {
+  text-decoration: none;
+  color: #000; /* Black color for the link */
+  margin-left: 3rem;
+}
+
+/*STYLING FOR SIGNP PAGE*/
+/* Signup Outer Container Styling */
+.signup-outercontainer {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(270deg, #ffffff, #87ceeb, #f0f8ff);
+  background-size: 800% 800%;
+  animation: gradientChange 16s ease infinite;
+  font-family: var(--font-family-secondary);
+}
+
+/* Keyframes for Background Gradient Animation */
+@keyframes gradientChange {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Signup Inner Container Styling */
+.signup-innercontainer {
+  width: 60%;
+  height: 70%;
+  display: flex;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: #fff; /* White background */
+  transform: scale(0.95);
+  animation: fadeInScale 1s forwards;
+  border: 2px solid #87ceeb; /* Sky blue border */
+}
+
+/* Keyframes for Fade-In and Scale Animation */
+@keyframes fadeInScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Signup Left Container Styling */
+.signup-leftcontainer {
+  width: 40%;
+  background-color: #144675; /* Dark blue background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff; /* White text color */
+  padding: 40px;
+}
+
+#signup-welcome-back {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin: 0;
+  text-align: center;
+}
+
+/* Signup Right Container Styling */
+.signup-rightcontainer {
+  width: 50%;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#signup-createanaccount {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Form and Input Box Styling */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-input-boxes {
+  margin-bottom: 20px;
+  padding: 15px;
+  font-size: 1rem;
+  border: 1px solid #ddd; /* Light grey border */
+  border-radius: 5px;
+}
+
+/* Signup Button Styling */
+#signup_btn {
+  padding: 15px;
+  font-size: 1.2rem;
+  background-color: #144675; /* Dark blue background */
+  color: #fff; /* White text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#signup_btn:hover {
+  background-color: #1250a7; /* Darker blue on hover */
+}
+
+/* Login Button Styling */
+#signuppage-login-btn {
+  margin-top: 1rem;
+  padding: 15px;
+  font-size: 1rem;
+  background-color: #87ceeb; /* Sky blue background */
+  color: #000; /* Black text color */
+  border: 2px solid transparent;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#signuppage-login-btn:hover {
+  background-color: #7ec0ee; /* Slightly darker sky blue on hover */
+  border: 2px solid #000; /* Black border on hover */
+}

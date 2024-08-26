@@ -1,4 +1,4 @@
-.login-outer-container {
+/* .login-outer-container {
     height: 100vh;
     display: flex;
     background-color: #e2f4db;
@@ -34,7 +34,7 @@
     }
 }
 
-/* Keyframes for the border animation */
+/* Keyframes for the border animation 
 @keyframes borderGlow1 {
     0% {
         box-shadow: 0 0 10px 2px rgba(0, 255, 0, 0.5);
@@ -127,4 +127,4 @@
     text-decoration: none;
     color: #2a3b29;
     margin-left:3rem ;
-}
+} */

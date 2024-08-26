@@ -1,4 +1,4 @@
-.signup-outercontainer {
+/* .signup-outercontainer {
     height: 100vh;
     display: flex;
     align-items: center;
@@ -34,7 +34,7 @@
     }
 }
 
-/* Keyframes for the border animation */
+/* Keyframes for the border animation 
 @keyframes borderGlow {
     0% {
         box-shadow: 0 0 10px 2px rgba(255, 105, 180, 0.5); 
@@ -131,4 +131,4 @@ form {
 #signuppage-login-btn:hover {
     background-color: #8c559a;
     border:2px solid rgb(0, 0, 0);
-}
+} */
