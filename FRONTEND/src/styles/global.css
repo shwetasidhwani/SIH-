@@ -5,23 +5,6 @@
   box-sizing: border-box;
 }
 
-/* Main navbar container */
-.homepage-navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #000;
-  padding: 30px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for visibility */
-  transition: background-color 0.3s ease;
-}
-
 /* Navbar list styling */
 .homepage-navbar ul {
   list-style-type: none;
@@ -34,7 +17,7 @@
 /* Navbar list item styling */
 .homepage-navbar ul li {
   text-decoration: none;
-  margin-right: 20px; /* Space between list items */
+  margin-right: 10px; /* Space between list items */
 }
 
 /* Navbar links styling */
@@ -51,27 +34,13 @@
 }
 
 .homepage-navbar li a:hover {
-  background-color: #ffd700;
-}
-
-/* Search and cart icons styling */
-.search-icon,
-.cart-icon {
-  color: #000;
-  cursor: pointer;
-  margin-left: 20px;
-}
-
-/* Font Awesome icon styling */
-.fa {
-  font-size: 20px;
+  background-color: #ffd966;
 }
 
 /* Auth links container styling */
 .auth-links {
   display: flex;
   list-style-type: none;
-  margin-left: 20px;
   align-items: center; /* Center-align the login and signup links */
 }
 
@@ -85,7 +54,7 @@
 .auth-links li a {
   display: inline-block;
   color: #1b2a3c; /* Dark text color */
-  background-color: #ffd700; /* Yellow background */
+  background-color: #ffd966; /* Yellow background */
   text-decoration: none;
   padding: 10px 20px;
   position: relative; /* For positioning the pseudo-element */
@@ -105,3 +74,116 @@
   border: 2px solid #1b2a3c; /* Dark border color */
   z-index: 1; /* Places the border behind the button */
 }
+
+/* Main navbar container */
+.homepage-navbar {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #000;
+  padding: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for visibility */
+  transition: background-color 0.3s ease;
+}
+
+/* Reset for website name */
+.homepage-navbar .website-name {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: #000; /* Yellow color */
+  margin-left: 70px;
+  margin-right: 230px;
+  text-decoration: none; /* Remove underline */
+  position: relative; /* For positioning the pseudo-element */
+  display: inline-block; /* Needed for pseudo-element */
+}
+
+.homepage-navbar .website-name a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* Hover effect for website name */
+.homepage-navbar .website-name::after {
+  content: ""; /* Creates a pseudo-element for the underline */
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Position below the text */
+  width: 100%;
+  height: 4px; /* Thickness of the underline */
+  background-color: #ffd966; /* Underline color same as text */
+  transform: scaleX(0); /* Initially hidden (collapsed) */
+  transform-origin: left; /* Ensure it scales from the left */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.homepage-navbar .website-name:hover::after {
+  transform: scaleX(1); /* Expands underline from left to right on hover */
+}
+
+/* Add hover effect to change the cursor */
+.homepage-navbar .website-name:hover {
+  cursor: pointer; /* Changes cursor to pointer on hover */
+}
+
+/* Ensure no purple color on links */
+.homepage-navbar li a {
+  text-decoration: none; /* No underline on links */
+  color: #000; /* Link color */
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.hero .hero-content .hero-catchphrase {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 60px;
+  line-height: 1.2;
+  color: #000; /* Black color */
+  margin-bottom: 40px;
+  margin-top: 230px;
+  text-align: center;
+}
+
+/* Styling for the underlined span */
+.underlined-hero {
+  position: relative; /* For positioning the pseudo-element */
+  display: inline-block; /* Needed for the underline effect */
+  color: #ffd966; /* Yellow color */
+}
+
+/* Underline effect using pseudo-element */
+.underlined-hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Position the underline below the text */
+  width: 100%;
+  z-index: -1;
+  height: 5px; /* Thickness of the underline */
+  background-color: #000; /* Color of the underline */
+}
+
+.hero .hero-content .hero-supportphrase {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  line-height: 35px;
+}
+/*                     
+.hero .hero-content .hero-supportphrase p {
+  color: #1b2a3c; /* Dark text color */
