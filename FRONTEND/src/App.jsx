@@ -4,23 +4,56 @@ import "./App.css";
 
 // Dhruv imports
 
+
+
+
 // Shweta imports
 import HomePage from "./components/HomePage";
+
+
+
 
 // Paritosh Imports
 import TicketFare from "./components/TicketFare";
 import ToFromSearch from "./components/ToFromSearch";
 import Footer from "./components/Footer";
 
+
+
+
+
+
+
 // Joshua Imports
 
+
+
+
+
+
+
 // Sujal imports
+
+
+
+
+
+
 
 // Ashmit imports
 import Login from "./Authentication/Login";
 import Signup from "./Authentication/Signup";
 import Logout from "./Authentication/Logout";
 import QueryComponent from "./QueryComponent/QueryComponent";
+import StationInfo from "./StationInfo/StationInfo";
+
+
+
+
+
+
+
+
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -75,6 +108,7 @@ const App = () => {
             <Route path="/logout" element={<Logout onLogout={handleLogout} />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/query" element={<QueryComponent />} />
+            <Route path="/station" element={<StationInfo />} />
           </Routes>
         </div>
         {/* Always include footer */}

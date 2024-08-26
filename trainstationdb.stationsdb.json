@@ -1,0 +1,644 @@
+[{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abaa"
+  },
+  "stationName": "Churchgate",
+  "stationUniqueId": 1,
+  "nextStation": "Marine Lines",
+  "distanceToNextStation": "1.7 km",
+  "timeToNextStation": "3 minutes",
+  "previousStation": "NULL",
+  "distanceToPreviousStation": "NULL",
+  "timeToPreviousStation": "NULL",
+  "nearbyAttractions": [
+    "Marine Drive",
+    "Nariman Point",
+    "Taraporewala Aquarium",
+    "Gateway Of India"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abab"
+  },
+  "stationName": "Marine Lines",
+  "stationUniqueId": 2,
+  "nextStation": "Charni Road",
+  "distanceToNextStation": "1.5 km",
+  "timeToNextStation": "2 minutes",
+  "previousStation": "Churchgate",
+  "distanceToPreviousStation": "1.7 km",
+  "timeToPreviousStation": "3 minutes",
+  "nearbyAttractions": [
+    "Marine Drive",
+    "Girgaum Chowpatty Beach",
+    "Taraporewala Aquarium"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abac"
+  },
+  "stationName": "Charni Road",
+  "stationUniqueId": 3,
+  "nextStation": "Grant Road",
+  "distanceToNextStation": "1.5 km",
+  "timeToNextStation": "3 minutes",
+  "previousStation": "Marine Lines",
+  "distanceToPreviousStation": "1.5 km",
+  "timeToPreviousStation": "2 minutes",
+  "nearbyAttractions": [
+    "Marine Drive",
+    "Girgaum Chowpatty Beach",
+    "Taraporewala Aquarium"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abad"
+  },
+  "stationName": "Grant Road",
+  "stationUniqueId": 4,
+  "nextStation": "Mumbai Central",
+  "distanceToNextStation": "1.8 km",
+  "timeToNextStation": "2 minutes",
+  "previousStation": "Charni Road",
+  "distanceToPreviousStation": "1.5 km",
+  "timeToPreviousStation": "3 minutes",
+  "nearbyAttractions": [
+    "Girgaum Chowpatty Beach",
+    "Babulnath Temple",
+    "August Kranti Maidan"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abae"
+  },
+  "stationName": "Mumbai Central",
+  "stationUniqueId": 5,
+  "nextStation": "Mahalaxmi",
+  "distanceToNextStation": "3 km",
+  "timeToNextStation": "3 minutes",
+  "previousStation": "Grant Road",
+  "distanceToPreviousStation": "1.8 km",
+  "timeToPreviousStation": "2 minutes",
+  "nearbyAttractions": [
+    "Haji Ali Dargah",
+    "Mahalakshmi Temple",
+    "Nehru Planetarium"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abaf"
+  },
+  "stationName": "Mahalaxmi",
+  "stationUniqueId": 6,
+  "nextStation": "Lower Parel",
+  "distanceToNextStation": "2.2 km",
+  "timeToNextStation": "4 minutes",
+  "previousStation": "Mumbai Central",
+  "distanceToPreviousStation": "3 km",
+  "timeToPreviousStation": "3 minutes",
+  "nearbyAttractions": [
+    "Haji Ali Dargah",
+    "Mahalakshmi Temple",
+    "Nehru Planetarium"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abb0"
+  },
+  "stationName": "Lower Parel",
+  "stationUniqueId": 7,
+  "nextStation": "Prabhadevi",
+  "distanceToNextStation": "1.4 km",
+  "timeToNextStation": "3 minutes",
+  "previousStation": "Mahalaxmi",
+  "distanceToPreviousStation": "2.2 km",
+  "timeToPreviousStation": "4 minutes",
+  "nearbyAttractions": [
+    "High Street Phoenix",
+    "Palladium Mall",
+    "Kamala Mills"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abb1"
+  },
+  "stationName": "Prabhadevi",
+  "stationUniqueId": 8,
+  "nextStation": "Dadar",
+  "distanceToNextStation": "1.3 km",
+  "timeToNextStation": "3 minutes",
+  "previousStation": "Lower Parel",
+  "distanceToPreviousStation": "1.4 km",
+  "timeToPreviousStation": "3 minutes",
+  "nearbyAttractions": [
+    "Siddhivinayak Temple",
+    "Dadar Flower Market",
+    "Shivaji Park"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abb2"
+  },
+  "stationName": "Dadar",
+  "stationUniqueId": 9,
+  "nextStation": "Matunga Road",
+  "distanceToNextStation": "1.2 km",
+  "timeToNextStation": "2 minutes",
+  "previousStation": "Prabhadevi",
+  "distanceToPreviousStation": "1.3 km",
+  "timeToPreviousStation": "3 minutes",
+  "nearbyAttractions": [
+    "Shivaji Park",
+    "Kabutar Khana",
+    "Plaza Cinema"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abb3"
+  },
+  "stationName": "Matunga Road",
+  "stationUniqueId": 10,
+  "nextStation": "Mahim Junction",
+  "distanceToNextStation": "1.4 km",
+  "timeToNextStation": "2 minutes",
+  "previousStation": "Dadar",
+  "distanceToPreviousStation": "1.2 km",
+  "timeToPreviousStation": "2 minutes",
+  "nearbyAttractions": [
+    "Matunga Market",
+    "City Light Cinema",
+    "Our Lady of Victories Church"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abb4"
+  },
+  "stationName": "Mahim Junction",
+  "stationUniqueId": 11,
+  "nextStation": "Bandra",
+  "distanceToNextStation": "2 km",
+  "timeToNextStation": "3 minutes",
+  "previousStation": "Matunga Road",
+  "distanceToPreviousStation": "1.4 km",
+  "timeToPreviousStation": "2 minutes",
+  "nearbyAttractions": [
+    "Mahim Church",
+    "St. Michael's Church",
+    "Mahim Fort"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abb5"
+  },
+  "stationName": "Bandra",
+  "stationUniqueId": 12,
+  "nextStation": "Khar Road",
+  "distanceToNextStation": "1.4 km",
+  "timeToNextStation": "2 minutes",
+  "previousStation": "Mahim Junction",
+  "distanceToPreviousStation": "2 km",
+  "timeToPreviousStation": "3 minutes",
+  "nearbyAttractions": [
+    "Bandra Fort",
+    "Bandra-Worli Sea Link",
+    "Mount Mary Church"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abb6"
+  },
+  "stationName": "Khar Road",
+  "stationUniqueId": 13,
+  "nextStation": "Santacruz",
+  "distanceToNextStation": "1.2 km",
+  "timeToNextStation": "2 minutes",
+  "previousStation": "Bandra",
+  "distanceToPreviousStation": "1.4 km",
+  "timeToPreviousStation": "2 minutes",
+  "nearbyAttractions": [
+    "Carter Road Promenade",
+    "Pali Hill",
+    "Joggers Park"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abb7"
+  },
+  "stationName": "Santacruz",
+  "stationUniqueId": 14,
+  "nextStation": "Vile Parle",
+  "distanceToNextStation": "1.5 km",
+  "timeToNextStation": "3 minutes",
+  "previousStation": "Khar Road",
+  "distanceToPreviousStation": "1.2 km",
+  "timeToPreviousStation": "2 minutes",
+  "nearbyAttractions": [
+    "Juhu Beach",
+    "ISKCON Temple",
+    "Kalina University"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abb8"
+  },
+  "stationName": "Vile Parle",
+  "stationUniqueId": 15,
+  "nextStation": "Andheri",
+  "distanceToNextStation": "2.2 km",
+  "timeToNextStation": "3 minutes",
+  "previousStation": "Santacruz",
+  "distanceToPreviousStation": "1.5 km",
+  "timeToPreviousStation": "3 minutes",
+  "nearbyAttractions": [
+    "Juhu Beach",
+    "NMIMS University",
+    "Mukesh Patel School of Technology"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abb9"
+  },
+  "stationName": "Andheri",
+  "stationUniqueId": 16,
+  "nextStation": "Jogeshwari",
+  "distanceToNextStation": "2.1 km",
+  "timeToNextStation": "3 minutes",
+  "previousStation": "Vile Parle",
+  "distanceToPreviousStation": "2.2 km",
+  "timeToPreviousStation": "3 minutes",
+  "nearbyAttractions": [
+    "Versova Beach",
+    "Infinity Mall",
+    "Andheri Sports Complex"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abba"
+  },
+  "stationName": "Jogeshwari",
+  "stationUniqueId": 17,
+  "nextStation": "Ram Mandir",
+  "distanceToNextStation": "1.4 km",
+  "timeToNextStation": "2 minutes",
+  "previousStation": "Andheri",
+  "distanceToPreviousStation": "2.1 km",
+  "timeToPreviousStation": "3 minutes",
+  "nearbyAttractions": [
+    "Jogeshwari Caves",
+    "Behram Baug",
+    "Patel Estate"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abbb"
+  },
+  "stationName": "Ram Mandir",
+  "stationUniqueId": 18,
+  "nextStation": "Goregaon",
+  "distanceToNextStation": "1.3 km",
+  "timeToNextStation": "2 minutes",
+  "previousStation": "Jogeshwari",
+  "distanceToPreviousStation": "1.4 km",
+  "timeToPreviousStation": "2 minutes",
+  "nearbyAttractions": [
+    "Inorbit Mall",
+    "Oshiwara Garden",
+    "Bangur Nagar"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abbc"
+  },
+  "stationName": "Goregaon",
+  "stationUniqueId": 19,
+  "nextStation": "Malad",
+  "distanceToNextStation": "1.4 km",
+  "timeToNextStation": "3 minutes",
+  "previousStation": "Ram Mandir",
+  "distanceToPreviousStation": "1.3 km",
+  "timeToPreviousStation": "2 minutes",
+  "nearbyAttractions": [
+    "Film City",
+    "Oberoi Mall",
+    "Aarey Colony"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abbd"
+  },
+  "stationName": "Malad",
+  "stationUniqueId": 20,
+  "nextStation": "Kandivali",
+  "distanceToNextStation": "1.8 km",
+  "timeToNextStation": "3 minutes",
+  "previousStation": "Goregaon",
+  "distanceToPreviousStation": "1.4 km",
+  "timeToPreviousStation": "3 minutes",
+  "nearbyAttractions": [
+    "Marve Beach",
+    "Mindspace",
+    "Inorbit Mall"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abbe"
+  },
+  "stationName": "Kandivali",
+  "stationUniqueId": 21,
+  "nextStation": "Borivali",
+  "distanceToNextStation": "1.6 km",
+  "timeToNextStation": "2 minutes",
+  "previousStation": "Malad",
+  "distanceToPreviousStation": "1.8 km",
+  "timeToPreviousStation": "3 minutes",
+  "nearbyAttractions": [
+    "Essel World",
+    "Water Kingdom",
+    "Global Vipassana Pagoda"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abbf"
+  },
+  "stationName": "Borivali",
+  "stationUniqueId": 22,
+  "nextStation": "Dahisar",
+  "distanceToNextStation": "3.4 km",
+  "timeToNextStation": "5 minutes",
+  "previousStation": "Kandivali",
+  "distanceToPreviousStation": "1.6 km",
+  "timeToPreviousStation": "2 minutes",
+  "nearbyAttractions": [
+    "Sanjay Gandhi National Park",
+    "Kanheri Caves",
+    "Gorai Beach"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abc0"
+  },
+  "stationName": "Dahisar",
+  "stationUniqueId": 23,
+  "nextStation": "Mira Road",
+  "distanceToNextStation": "3.1 km",
+  "timeToNextStation": "5 minutes",
+  "previousStation": "Borivali",
+  "distanceToPreviousStation": "3.4 km",
+  "timeToPreviousStation": "5 minutes",
+  "nearbyAttractions": [
+    "Sanjay Gandhi National Park",
+    "Essel World",
+    "Water Kingdom"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abc1"
+  },
+  "stationName": "Mira Road",
+  "stationUniqueId": 24,
+  "nextStation": "Bhayandar",
+  "distanceToNextStation": "2.6 km",
+  "timeToNextStation": "4 minutes",
+  "previousStation": "Dahisar",
+  "distanceToPreviousStation": "3.1 km",
+  "timeToPreviousStation": "5 minutes",
+  "nearbyAttractions": [
+    "GCC Club",
+    "Mira Road Jain Temple",
+    "Maxus Mall"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abc2"
+  },
+  "stationName": "Bhayandar",
+  "stationUniqueId": 25,
+  "nextStation": "Naigaon",
+  "distanceToNextStation": "4.5 km",
+  "timeToNextStation": "6 minutes",
+  "previousStation": "Mira Road",
+  "distanceToPreviousStation": "2.6 km",
+  "timeToPreviousStation": "4 minutes",
+  "nearbyAttractions": [
+    "Bhayandar Creek",
+    "Maxus Mall",
+    "Jivdani Temple"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abc3"
+  },
+  "stationName": "Naigaon",
+  "stationUniqueId": 26,
+  "nextStation": "Vasai Road",
+  "distanceToNextStation": "3.8 km",
+  "timeToNextStation": "5 minutes",
+  "previousStation": "Bhayandar",
+  "distanceToPreviousStation": "4.5 km",
+  "timeToPreviousStation": "6 minutes",
+  "nearbyAttractions": [
+    "Naigaon Beach",
+    "Juchandra Village",
+    "Holy Spirit Church"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abc4"
+  },
+  "stationName": "Vasai Road",
+  "stationUniqueId": 27,
+  "nextStation": "Nallasopara",
+  "distanceToNextStation": "5.3 km",
+  "timeToNextStation": "7 minutes",
+  "previousStation": "Naigaon",
+  "distanceToPreviousStation": "3.8 km",
+  "timeToPreviousStation": "5 minutes",
+  "nearbyAttractions": [
+    "Vasai Fort",
+    "Arnala Beach",
+    "Suruchi Beach"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abc5"
+  },
+  "stationName": "Nallasopara",
+  "stationUniqueId": 28,
+  "nextStation": "Virar",
+  "distanceToNextStation": "4.7 km",
+  "timeToNextStation": "6 minutes",
+  "previousStation": "Vasai Road",
+  "distanceToPreviousStation": "5.3 km",
+  "timeToPreviousStation": "7 minutes",
+  "nearbyAttractions": [
+    "Kalamb Beach",
+    "Rajodi Beach",
+    "Chinchoti Waterfall"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abc6"
+  },
+  "stationName": "Virar",
+  "stationUniqueId": 29,
+  "nextStation": "Vaitarna",
+  "distanceToNextStation": "8.4 km",
+  "timeToNextStation": "10 minutes",
+  "previousStation": "Nallasopara",
+  "distanceToPreviousStation": "4.7 km",
+  "timeToPreviousStation": "6 minutes",
+  "nearbyAttractions": [
+    "Jivdani Temple",
+    "Yazoo Park",
+    "Arnala Fort"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abc7"
+  },
+  "stationName": "Vaitarna",
+  "stationUniqueId": 30,
+  "nextStation": "Saphale",
+  "distanceToNextStation": "9.7 km",
+  "timeToNextStation": "11 minutes",
+  "previousStation": "Virar",
+  "distanceToPreviousStation": "8.4 km",
+  "timeToPreviousStation": "10 minutes",
+  "nearbyAttractions": [
+    "Vaitarna Dam",
+    "Tungareshwar Wildlife Sanctuary"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abc8"
+  },
+  "stationName": "Saphale",
+  "stationUniqueId": 31,
+  "nextStation": "Palghar",
+  "distanceToNextStation": "10.2 km",
+  "timeToNextStation": "12 minutes",
+  "previousStation": "Vaitarna",
+  "distanceToPreviousStation": "9.7 km",
+  "timeToPreviousStation": "11 minutes",
+  "nearbyAttractions": [
+    "Shirgaon Beach",
+    "Mahim Beach"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abc9"
+  },
+  "stationName": "Palghar",
+  "stationUniqueId": 32,
+  "nextStation": "Umroli",
+  "distanceToNextStation": "8.7 km",
+  "timeToNextStation": "10 minutes",
+  "previousStation": "Saphale",
+  "distanceToPreviousStation": "10.2 km",
+  "timeToPreviousStation": "12 minutes",
+  "nearbyAttractions": [
+    "Kelva Beach",
+    "Kelva Fort",
+    "Satpati Beach"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abca"
+  },
+  "stationName": "Umroli",
+  "stationUniqueId": 33,
+  "nextStation": "Boisar",
+  "distanceToNextStation": "5.2 km",
+  "timeToNextStation": "7 minutes",
+  "previousStation": "Palghar",
+  "distanceToPreviousStation": "8.7 km",
+  "timeToPreviousStation": "10 minutes",
+  "nearbyAttractions": [
+    "Umroli Beach",
+    "Tarapur Industrial Area"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abcb"
+  },
+  "stationName": "Boisar",
+  "stationUniqueId": 34,
+  "nextStation": "Vangaon",
+  "distanceToNextStation": "6.8 km",
+  "timeToNextStation": "8 minutes",
+  "previousStation": "Umroli",
+  "distanceToPreviousStation": "5.2 km",
+  "timeToPreviousStation": "7 minutes",
+  "nearbyAttractions": [
+    "Tarapur Atomic Power Station",
+    "Chinchani Beach"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abcc"
+  },
+  "stationName": "Vangaon",
+  "stationUniqueId": 35,
+  "nextStation": "Dahanu Road",
+  "distanceToNextStation": "11.2 km",
+  "timeToNextStation": "13 minutes",
+  "previousStation": "Boisar",
+  "distanceToPreviousStation": "6.8 km",
+  "timeToPreviousStation": "8 minutes",
+  "nearbyAttractions": [
+    "Vangaon Beach",
+    "Kalpataru Botanical Gardens"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66ccc42d787a1275b965abcd"
+  },
+  "stationName": "Dahanu Road",
+  "stationUniqueId": 36,
+  "nextStation": "NULL",
+  "distanceToNextStation": "NULL",
+  "timeToNextStation": "NULL",
+  "previousStation": "Vangaon",
+  "distanceToPreviousStation": "11.2 km",
+  "timeToPreviousStation": "13 minutes",
+  "nearbyAttractions": [
+    "Dahanu Beach",
+    "Bahrot Caves",
+    "Bordi Beach"
+  ]
+}]
