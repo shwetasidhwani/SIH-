@@ -34,7 +34,7 @@
 }
 
 .homepage-navbar li a:hover {
-  background-color: #ffd966;
+  background-color: #87ceeb;
 }
 
 /* Auth links container styling */
@@ -54,7 +54,7 @@
 .auth-links li a {
   display: inline-block;
   color: #1b2a3c; /* Dark text color */
-  background-color: #ffd966; /* Yellow background */
+  background-color: #87ceeb; /* Yellow background */
   text-decoration: none;
   padding: 10px 20px;
   position: relative; /* For positioning the pseudo-element */
@@ -118,7 +118,7 @@
   bottom: -5px; /* Position below the text */
   width: 100%;
   height: 4px; /* Thickness of the underline */
-  background-color: #ffd966; /* Underline color same as text */
+  background-color: #87ceeb; /* Underline color same as text */
   transform: scaleX(0); /* Initially hidden (collapsed) */
   transform-origin: left; /* Ensure it scales from the left */
   transition: transform 0.3s ease; /* Smooth transition */
@@ -159,7 +159,7 @@
 .underlined-hero {
   position: relative; /* For positioning the pseudo-element */
   display: inline-block; /* Needed for the underline effect */
-  color: #ffd966; /* Yellow color */
+  color: #87ceeb; /* Yellow color */
 }
 
 /* Underline effect using pseudo-element */
