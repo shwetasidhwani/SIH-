@@ -1,0 +1,103 @@
+.station-info-outercontainer {
+    font-family: Consolas,monaco,monospace;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-wrapper {
+  background-color: rgb(255, 255, 255);
+}
+
+.station-info-form-container {
+    border-radius: 10px;
+    color: white;
+    padding: 5px;
+display: flex;
+align-items: center;
+  text-align: center;
+  margin-top: 2rem;
+  background-color: #333333;
+  height: 8rem;
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+#station-info-form-input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  width:30rem;
+  position: relative;
+  overflow: hidden;
+  background-color: #f0f0f0;
+  transition: background-color 0.5s ease;
+}
+
+#station-info-form-button {
+    color: rgb(224, 210, 210);
+    width: 5rem;
+    height: 2rem;
+    line-height: 1.3rem;
+    border: 2px solid rgb(224, 210, 210);
+    border-radius: 20px;
+  background: linear-gradient(90deg, transparent, transparent) center/0% 100% no-repeat;
+  transition: background-size 0.2s;
+}
+
+#station-info-form-button:hover,
+#station-info-form-button:focus {
+  background-size: 100% 100%;
+  background-image: linear-gradient(90deg, #bebebe, #62e1d7);
+  color: rgb(0, 0, 0);
+  border: 2px solid black;
+}
+
+
+
+.station-info-output-container {
+    color: white;
+    border-radius: 15px;
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  background-color: #333333;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+}
+
+.station-info-information {
+  padding-left: 4rem;
+  padding-top: 3rem;
+}
+
+#station-infostation-name{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.station-info-ptags{
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.station-info-li-tags{
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.station-info-station-map-image-container {
+    margin-left: 3rem;
+}
+
+#station-info-station-layout-heading{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#station-info-map-image {
+  height: 800px;
+  width: 450px;
+}
