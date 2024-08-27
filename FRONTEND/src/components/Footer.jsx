@@ -7,12 +7,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        {/* <div className="footer-logo"> */}
-          {/* <img src="logo.png" alt="Logo" className="logo" />
-          <p>Site Generator is a set of useful templates with fresh layouts.</p>
-        </div> */}
-
-        {/* Columns Section */}
+        
         <div className="footer-grid">
           {/* Column 1 */}
           <div className="footer-column">
@@ -55,9 +50,9 @@ const Footer = () => {
         {/* Social Media and Subscribe */}
         <div className="footer-subscribe">
           <div className="footer-socials">
-            <FontAwesomeIcon icon={faFacebook} />
-            <FontAwesomeIcon icon={faInstagram} />
-            <FontAwesomeIcon icon={faTwitter} />
+            <FontAwesomeIcon icon={faFacebook} className='footer-socials-icons'/>
+            <FontAwesomeIcon icon={faInstagram} className='footer-socials-icons'/>
+            <FontAwesomeIcon icon={faTwitter} className='footer-socials-icons'/>
           </div>
           <div className="footer-input">
             <input type="email" placeholder="Enter email address" />

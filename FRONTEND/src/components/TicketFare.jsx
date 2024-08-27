@@ -80,7 +80,7 @@ function TicketFare() {
         </div>
 
         <div className="form-group">
-          <button onClick={calculateFare}>Calculate Fare</button>
+          <button onClick={calculateFare} id="fare-cal-btn">Calculate Fare</button>
         </div>
       </div>
 

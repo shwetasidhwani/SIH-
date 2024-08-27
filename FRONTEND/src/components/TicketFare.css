@@ -55,7 +55,7 @@
   }
   
   /* Button styling */
-  button {
+  #fare-cal-btn{
     width: 100%;
     padding: 15px;
     font-size: 18px;
@@ -67,7 +67,7 @@
     transition: background-color 0.3s, box-shadow 0.3s;
   }
   
-  button:hover {
+  #fare-cal-btn:hover {
     background-color: #9843e3;
     box-shadow: 0 4px 10px #9843e3;
   }
