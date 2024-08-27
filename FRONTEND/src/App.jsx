@@ -93,15 +93,26 @@ const App = () => {
           <Routes>
             {/* Dhruv routes */}
 
+
+
+
             {/* Shweta Routes */}
             <Route path="/" element={<HomePage />} />
+
+
+
 
             {/* Paritosh Routes */}
             <Route path="/ticketfare" element={<TicketFare />} />
             <Route path="/toandfrom" element={<ToFromSearch />} />
             <Route path="/neareststn" element={<NearestStations />} />
 
+
+
             {/* Joshua Routes  */}
+
+
+
 
             {/* Sujal Routes  */}
 
@@ -111,6 +122,9 @@ const App = () => {
             <Route path="/signup" element={<Signup />} />
             <Route path="/query" element={<QueryComponent />} />
             <Route path="/station" element={<StationInfo />} />
+
+
+            
           </Routes>
         </div>
         {/* Always include footer */}

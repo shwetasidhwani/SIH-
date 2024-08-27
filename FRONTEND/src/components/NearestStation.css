@@ -1,0 +1,19 @@
+.neareststations-outer-container{
+    height: 80vh;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.neareststations-inner-container{
+    width: 40%;
+    height: 40%;
+    border: 4px solid black;
+    border-radius:20px ;
+    text-align: center;
+}
+
+.user-location-list li{
+    list-style-type: none;
+}

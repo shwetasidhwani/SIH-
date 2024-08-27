@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import "./NearestStation.css";
 
-// List of Western Line stations with their coordinates
 const stations = [
   // Western Line
   { name: "Churchgate", lat: 18.9351, lon: 72.8277 },
@@ -105,7 +105,6 @@ const stations = [
 ];
 
 
-// Function to calculate the distance between two coordinates using the Haversine formula
 function calculateDistance(lat1, lon1, lat2, lon2) {
   const R = 6371; // Radius of the Earth in km
   const dLat = (lat2 - lat1) * (Math.PI / 180);
@@ -149,15 +148,15 @@ const NearestStations = () => {
     // Sort stations by distance
     nearbyStations.sort((a, b) => a.distance - b.distance);
 
-    // Limit to top 5 closest stations
     setNearestStations(nearbyStations.slice(0, 2));
   };
 
-  return (
-    <div>
+  return (<>
+    <div className='neareststations-outer-container'>
+    <div className='neareststations-inner-container'>
       <h2>Nearest Mumbai Western Line Stations</h2>
       {userLocation ? (
-        <div>
+        <div className='user-location-list'>
           <h4>Your Location: {userLocation.lat}, {userLocation.lon}</h4>
           <ul>
             {nearestStations.map((station, index) => (
@@ -171,6 +170,8 @@ const NearestStations = () => {
         <p>Fetching your location...</p>
       )}
     </div>
+    </div>
+    </>
   );
 };
 
