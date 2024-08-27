@@ -20,12 +20,18 @@ align-items: center;
   text-align: center;
   margin-top: 2rem;
   background-color: #333333;
-  height: 8rem;
+  height: 9rem;
   width: 50%;
   margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+
+#station-info-station-input-container-heading{
+    font-size: 1.5rem;
 }
 
 #station-info-form-input {
+    font-size: 1.3rem;
   margin-top: 10px;
   margin-bottom: 10px;
   text-align: center;
@@ -38,13 +44,13 @@ align-items: center;
 
 #station-info-form-button {
     color: rgb(224, 210, 210);
-    width: 5rem;
-    height: 2rem;
-    line-height: 1.3rem;
+    font-size: 1.2rem ;
+    width: 7rem;
     border: 2px solid rgb(224, 210, 210);
     border-radius: 20px;
   background: linear-gradient(90deg, transparent, transparent) center/0% 100% no-repeat;
   transition: background-size 0.2s;
+  margin-bottom: 5px;
 }
 
 #station-info-form-button:hover,

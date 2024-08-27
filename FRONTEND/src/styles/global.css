@@ -236,7 +236,7 @@
   transform: scale(0.95);
   background-color: #ffffff; /* White background for the container */
   animation: fadeInScale 1s forwards;
-  border: 2px solid #87ceeb; /* Sky blue border color */
+  border: 3px solid #87ceeb; /* Sky blue border color */
 }
 
 /* Keyframes for fade-in and scale animation */
@@ -371,7 +371,7 @@
   background-color: #fff; /* White background */
   transform: scale(0.95);
   animation: fadeInScale 1s forwards;
-  border: 2px solid #87ceeb; /* Sky blue border */
+  border: 3px solid #87ceeb; /* Sky blue border */
 }
 
 /* Keyframes for Fade-In and Scale Animation */

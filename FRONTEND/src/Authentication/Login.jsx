@@ -35,7 +35,7 @@ const Login = ({ onLogin }) => {
       <div className="login-container">
         <div className="login-left">
           <div className="login-left-content">
-            <h1>Welcome back to WayRails</h1>
+            <h1>Welcome back to Station Sathi</h1>
             <p className="login-description">Connecting people..</p>
           </div>
         </div>

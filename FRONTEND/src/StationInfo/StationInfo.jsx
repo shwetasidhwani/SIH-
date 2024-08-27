@@ -75,7 +75,7 @@ const StationInfo = () => {
     <>
       <div className="station-info-outercontainer">
         <form onSubmit={handleSubmit} className="station-info-form-container">
-          <h3>Station Information</h3>
+          <h3 id="station-info-station-input-container-heading">Station Information</h3>
           <p>Get information regarding the station you want to visit</p>
           <input
             type="text"

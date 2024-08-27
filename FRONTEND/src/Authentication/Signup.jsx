@@ -37,7 +37,7 @@ const Signup = () => {
       <div className="signup-outercontainer">
         <div className="signup-innercontainer">
           <div className="signup-leftcontainer">
-            <h1 id="signup-welcome-back">Welcome back to WayRails</h1>
+            <h1 id="signup-welcome-back">Welcome back to Station Sathi</h1>
             <Link to="/login">
               {" "}
               <button id="signuppage-login-btn">Log in</button>{" "}
