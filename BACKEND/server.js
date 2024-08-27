@@ -45,6 +45,7 @@ app.use(cors({
   origin: 'http://localhost:5173',
   credentials: true
 }));
+
 app.use(body_parser.json());
 app.use(body_parser.urlencoded({extended : true}));
 app.use(express.json());
@@ -55,6 +56,8 @@ app.use(session({
   saveUninitialized: true,
   cookie : {secure : true} //set true while deployment 
 }));
+
+app.use('/maps', express.static('maps'));
 
 const client = new AssemblyAI({
   apiKey: "(your-api-key)",

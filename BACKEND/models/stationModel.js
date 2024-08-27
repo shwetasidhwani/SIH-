@@ -9,8 +9,11 @@ const stationSchema = new mongoose.Schema({
     previousStation : {type : String},
     distanceToPreviousStation : {type : String},
     timetoPreviousStation : {type : String},
-    nearbyAttractions : {type : [String]}
-
+    nearbyAttractions : {type : [String]},
+    mapUrl : {type : String},
+    //nearbyMapUrl : {type : String},
+    latitude : {type : Number , required : true},
+    longitude : {type : Number , required : true},
 });
 
 module.exports = mongoose.model('Station', stationSchema);

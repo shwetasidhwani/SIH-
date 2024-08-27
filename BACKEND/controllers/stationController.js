@@ -5,6 +5,7 @@ exports.getStationInfo = async (req, res) => {
         console.log("INside stationcontroller");
         console.log(req.params.stationName);
         const {stationName} = req.params;
+        console.log("Req.body is gonna be empty shetwaas: ", req.body);
         console.log(stationName);
 
         const station = await Station.findOne({stationName});
@@ -13,6 +14,11 @@ exports.getStationInfo = async (req, res) => {
         if(!station){
             return res.status(404).json({message : "Station not found"});
         }
+            //maps ka stuff
+        station.mapUrl = `/maps/${stationName.replace(" ", "_")}.jpeg`;
+        //station.nearbyMapUrl = `/maps/${station.nextStation.replace(" ", "_")}.jpeg`;
+
+
         res.json(station);
     }
     catch(error){
