@@ -17,6 +17,7 @@ import HomePage from "./components/HomePage";
 import TicketFare from "./components/TicketFare";
 import ToFromSearch from "./components/ToFromSearch";
 import Footer from "./components/Footer";
+import NearestStations from "./components/NearestStations";
 
 
 
@@ -98,6 +99,7 @@ const App = () => {
             {/* Paritosh Routes */}
             <Route path="/ticketfare" element={<TicketFare />} />
             <Route path="/toandfrom" element={<ToFromSearch />} />
+            <Route path="/neareststn" element={<NearestStations />} />
 
             {/* Joshua Routes  */}
 
