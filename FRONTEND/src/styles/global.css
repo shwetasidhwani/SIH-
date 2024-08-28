@@ -197,6 +197,7 @@
   font-family: var(--font-family-primary);
   font-size: var(--font-size-support);
   line-height: var(--line-height-support);
+  margin-bottom:150px;
 }
 
 /*STYLING FOR LOGIN PAGE*/

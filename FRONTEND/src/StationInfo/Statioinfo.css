@@ -1,5 +1,7 @@
+
+
 .station-info-outercontainer {
-    font-family: Consolas,monaco,monospace;
+  font-family: Consolas,monaco,monospace;
   background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
