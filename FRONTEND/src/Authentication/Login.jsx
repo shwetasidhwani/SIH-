@@ -20,7 +20,7 @@ const Login = ({ onLogin }) => {
       const response = await axios.post(
         "http://localhost:3000/api/auth/login",
         formValues,
-        { withCredentials: true }
+        {withCredentials: true}
       );
       alert(response.data.message);
       onLogin(response.data.token);

@@ -6,10 +6,9 @@ import StationInfo from "../StationInfo/StationInfo";
 const HomePage = () => {
   return (
     <div>
-      <Navbar />
+      <Navbar/>
       <HeroComponent />
       <StationInfo/>
-
     </div>
   );
 };

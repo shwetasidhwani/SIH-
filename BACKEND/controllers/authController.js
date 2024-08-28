@@ -1,6 +1,9 @@
 const express = require('express');
 const brcypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const multer = require('multer');
+const fs = require('fs');
+const path = require('path');
 const User = require('../models/authModel');
 require('dotenv').config({path: '.env'});
 app = express();
@@ -8,7 +11,7 @@ app = express();
 
 const login = async (req, res) => {
     try{
-        console.log(req.user);
+        console.log(req);
         const { email, password } = req.body;
         const user = await User.findOne({email});
         //console.log(req.user.id);
@@ -29,7 +32,11 @@ const login = async (req, res) => {
         console.log( "Token ", token);
         res.cookie('token', token , {httpOnly : true  , secure : process.env.NODE_ENV === 'production'});
         req.session.token = token;
-        res.status(200).json({message : "User logged in" , token});
+
+        const profilePicUrl = user.profilePic ? `/uploads/profilePictures/${user.profilePic}` : null;
+
+        console.log(user.profilePic, password , user.password , email);
+        res.status(200).json({message : "User logged in" , token , profilePicture : user.profilePic});
         //console.log("Cookie set: ", res.get('Set-Cookie'));
     }
     catch(err){
@@ -40,6 +47,7 @@ const login = async (req, res) => {
 
 const signup = async(req, res) => {
     try{
+
         const { email , password, reconfirm_password } = req.body;
         console.log(req.body);
         if(password !== reconfirm_password){
@@ -54,11 +62,18 @@ const signup = async(req, res) => {
             return res.status(400).json({message : "user exisits"});
         }
 
-        const hashedPassword = await brcypt.hash(password, 10);
+        const hashedPassword = await  brcypt.hash(password, 10);
+        const profilePic = req.file ? `${email}-${Date.now()}${path.extname(req.file.originalname)}` : null;
+
+        if (req.file) {
+            const filePath = path.join(__dirname, '../uploads/profilePictures', profilePic);
+            fs.renameSync(req.file.path, filePath); // Move and rename the file
+        }
 
         const newUser = new User({
             email , 
-            password : hashedPassword
+            password : hashedPassword,
+            profilePic,
         });
 
         await newUser.save();

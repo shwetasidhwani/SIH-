@@ -6,6 +6,7 @@ const body_parser = require('body-parser');
 const cookie_parser = require("cookie-parser");
 const mongoose = require('mongoose');
 const session = require('express-session');
+const path = require('path');
 
 
 
@@ -13,7 +14,7 @@ const session = require('express-session');
 const authRoutes = require('./routes/authRoutes');
 const queryRoute = require("./routes/queryRoute");
 const stationRoute = require('./routes/stationRoute');
-
+const upload = require('./middlewares/uploadMiddleware');
 
 
 
@@ -100,6 +101,9 @@ mongoose.connect('mongodb://127.0.0.1:27017/SIH').then(() => {
 app.use('/api/auth', authRoutes);
 app.use('/api/llm', queryRoute);
 app.use('/api/station', stationRoute);
+app.use('/uploads/profilePictures', express.static(path.join(__dirname, 'uploads/profilePictures')));
+
+
 
 
 

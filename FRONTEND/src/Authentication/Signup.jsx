@@ -11,7 +11,12 @@ const Signup = () => {
     reconfirm_password: "",
   });
 
+  const [profilePicture , setProfilePicture] = useState(null);
+
   const handleChange = (e) => {
+    if(e.target.name === "profilePicture"){
+      setProfilePicture(e.target.files[0]);
+    }
     setFormValues({
       ...formValues,
       [e.target.name]: e.target.value,
@@ -20,10 +25,30 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const formData = new FormData();
+
+    formData.append("email", formValues.email);
+    formData.append("password", formValues.password);
+    formData.append("reconfirm_password", formValues.reconfirm_password);
+
+    if (profilePicture){
+      formData.append("profilePicture", profilePicture);
+    }
+
+    for (let [key, value] of formData.entries()) {
+        console.log(`${key}:`, value);
+    }
+
     try {
       const response = await axios.post(
         "http://localhost:3000/api/auth/signup",
-        formValues
+        formData,
+        {
+          headers: {
+            "Content-Type" : "multipart/form-data",
+          },
+        }
       );
       alert(response.data.message);
     } catch (err) {
@@ -39,14 +64,15 @@ const Signup = () => {
           <div className="signup-leftcontainer">
             <h1 id="signup-welcome-back">Welcome back to Station Sathi</h1>
             <Link to="/login">
-              {" "}
               <button id="signuppage-login-btn">Log in</button>{" "}
             </Link>
           </div>
 
           <div className="signup-rightcontainer">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} encType="multipart/form-data">
               <h1 id="signup-createanaccount">Create An Account</h1>
+
+
               <input
                 type="email"
                 name="email"
@@ -76,6 +102,8 @@ const Signup = () => {
                 required
                 className="signup-input-boxes"
               />
+
+              <input type="file" accept="image/*" name = "profilePicture" onChange={handleChange} className="signup-input-boxes"/>
 
               <button type="submit" id="signup_btn">
                 Sign Up
