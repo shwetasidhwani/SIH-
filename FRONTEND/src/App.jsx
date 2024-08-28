@@ -124,13 +124,13 @@ const App = () => {
             <Route path="/logout" element={<Logout onLogout={handleLogout} />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/query" element={<QueryComponent />} />
-            <Route path="/station" element={<StationInfo />} />
+            <Route path="/station" element={<StationInfo/>} />
 
 
             
           </Routes>
-        </div>
         {/* Always include footer */}
+        </div>
         <Footer />
       </BrowserRouter>
     </div>
