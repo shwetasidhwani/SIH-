@@ -24,6 +24,16 @@
     border-radius: 4px;
   }
   
+  .fontsize-buttons{
+    font-size: 1.2rem;
+    background-color: #ffffff;
+    color: rgb(58, 36, 131);
+    border: none;
+    border-radius: 2px;
+    margin-right: 10px;
+
+  }
+
   /* Hero Section */
   .hero-section {
     position: relative;

@@ -139,9 +139,9 @@ const About = () => {
       <div className="language-selector">
       <div>
              {/* Font size adjustment buttons */}
-        <button onClick={increaseFontSize}>Increase Font Size</button>
-        <button onClick={decreaseFontSize}>Decrease Font Size</button>
-        <button onClick={resetFontSize}>Reset Font Size</button>
+        <button onClick={increaseFontSize} className='fontsize-buttons'>Increase Font Size</button>
+        <button onClick={decreaseFontSize} className='fontsize-buttons'>Decrease Font Size</button>
+        <button onClick={resetFontSize} className='fontsize-buttons'>Reset Font Size</button>
       </div>
         <select onChange={(e) => i18n.changeLanguage(e.target.value)} className="language-dropdown">
           <option value="en">English</option>

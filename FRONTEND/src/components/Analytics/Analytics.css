@@ -1,0 +1,126 @@
+.analytics-container {
+    text-align: center;
+    margin-top: 100px;
+    padding: 20px;
+    background-color: #f5f5f5; /* Light gray background for the container */
+  }
+  
+  .analytics-container h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .analytics-functionality-container {
+    display: flex;
+    flex-direction: row;
+    gap: 13rem;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .search-bar {
+    margin-bottom: 20px;
+    width: 5rem;
+    font-size: 1.3rem;
+    padding: 5px;
+  }
+  
+  .day-selector {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+  }
+  
+  #day {
+    margin-left: 1rem;
+  }
+  
+  .charts {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .charts-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+    background-color: #fff; /* White background for the charts container */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 15px; /* Padding around the charts */
+  }
+  
+  .bar-chart, .polar-area-chart {
+    width: 45%;
+    margin-bottom: 20px;
+  }
+  
+  .bar-chart {
+    /* Height to match the Polar Area Chart */
+    height: 450px; /* Keep the height as specified */
+  }
+  
+  .polar-area-chart {
+    height: 450px; /* Keep the height as specified */
+  }
+  
+  .statistics {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  
+  .total-stats {
+    margin-top: 2rem;
+    width: 30%;
+    max-width: 40%;
+    background-color: #ffffff; /* White background for the stats container */
+    border-radius: 8px; /* Rounded corners for a softer look */
+    padding: 20px; /* Padding inside the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation effect */
+    margin-bottom: 20px; /* Space below the stats container */
+  }
+  
+  .total-stats h2 {
+    margin-bottom: 15px; /* Space below the heading */
+    font-size: 24px; /* Font size for the heading */
+    color: #333; /* Dark color for the heading */
+  }
+  
+  .total-stats p {
+    font-size: 16px; /* Font size for the paragraph */
+    color: #555; /* Slightly lighter color for the text */
+    margin: 5px 0; /* Space above and below each paragraph */
+  }
+  
+  .analytics-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff; /* White background for the table */
+    border-radius: 8px; /* Rounded corners for the table */
+    overflow: hidden; /* Hide overflow to maintain rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation effect */
+  }
+  
+  .analytics-table th, .analytics-table td {
+    border: 1px solid #ddd;
+    padding: 10px; /* Increased padding for better readability */
+    text-align: left;
+  }
+  
+  .analytics-table th {
+    background-color: #f2f2f2;
+    color: #333; /* Darker text color for table headers */
+  }
+  
+  .analytics-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Zebra striping for table rows */
+  }
+  
+  .analytics-table tbody tr:hover {
+    background-color: #f1f1f1; /* Highlight row on hover */
+  }
+  

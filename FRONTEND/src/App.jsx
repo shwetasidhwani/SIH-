@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 
 // Dhruv imports
+import About from "./components/About";
+import Analytics from "./components/Analytics/Analytics";
 
 
 
@@ -47,7 +49,6 @@ import Signup from "./Authentication/Signup";
 import Logout from "./Authentication/Logout";
 import QueryComponent from "./QueryComponent/QueryComponent";
 import StationInfo from "./StationInfo/StationInfo";
-import About from "./components/About";
 
 
 
@@ -94,7 +95,7 @@ const App = () => {
           <Routes>
             {/* Dhruv routes */}
             <Route path="/about" element={<About/>} />
-
+            <Route path="/analytics" element={<Analytics/>} />
 
 
             {/* Shweta Routes */}
