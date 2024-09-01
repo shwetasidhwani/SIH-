@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const { AssemblyAI } = require("assemblyai");
 const body_parser = require("body-parser");
-const cookie_parser = require("cookie-parser");
+const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const path = require('path');
@@ -12,7 +12,7 @@ const path = require('path');
 const authRoutes = require("./routes/authRoutes");
 const queryRoute = require("./routes/queryRoute");
 const stationRoute = require('./routes/stationRoute');
-const upload = require('./middlewares/uploadMiddleware');
+const chatRoutes = require('./routes/chatMessageRoute');
 
 
 
@@ -34,16 +34,16 @@ app.use(
   })
 );
 
-app.use(body_parser.json());
+app.use(cookieParser());
 app.use(body_parser.urlencoded({ extended: true }));
+app.use(body_parser.json());
 app.use(express.json());
-app.use(cookie_parser());
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: true }, //set true while deployment
+    cookie: { secure: false }, //set true while deployment
   })
 );
 
@@ -85,7 +85,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/llm', queryRoute);
 app.use('/api/station', stationRoute);
 app.use('/uploads/profilePictures', express.static(path.join(__dirname, 'uploads/profilePictures')));
-
+app.use('/api/chat', chatRoutes);
 
 
 

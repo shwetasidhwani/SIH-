@@ -16,7 +16,7 @@ exports.getStationInfo = async (req, res) => {
     //maps ka stuff
     station.mapUrl = `/maps/${stationName.replace(" ", "_")}.jpeg`;
     //station.nearbyMapUrl = `/maps/${station.nextStation.replace(" ", "_")}.jpeg`;
-
+      
     res.json(station);
   } catch (error) {
     console.error("Error fetching station error : ");

@@ -4,6 +4,7 @@ const router = express.Router();
 const upload = require('../middlewares/uploadMiddleware');
 const jwt = require('jsonwebtoken');
 const User = require('../models/authModel');
+const authenticate = require('../middlewares/authMiddleware');
 
 router.post('/login', login);
 router.post('/signup', upload.single('profilePicture') ,signup);
@@ -12,6 +13,7 @@ router.get('/logout', logout);
 
 router.get('/protected', (req, res) => {
     res.status(200).json({ message: "You are authenticated" });
+    //console.log(res);
     console.log("Inside protected");
 }); 
 

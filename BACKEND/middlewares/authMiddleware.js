@@ -1,10 +1,5 @@
-
 const jwt = require('jsonwebtoken');
-const User = require('../models/userModel');
-
-
 require('dotenv').config({ path: ".env" });
-console.log(process.env.JWT_SECRET);
 
 const authenticate = (req, res, next) => {
   console.log("authMiddleware req.cookies: ", req.cookies);
@@ -14,16 +9,20 @@ const authenticate = (req, res, next) => {
   if (!token) {
     console.log("No token provided");
     req.user = null;
-    return next(); // Allow unauthenticated requests
+    return next();
   }
-  
-  try {
+
+  try{
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    console.log("INside authMiddleware req.user");
     req.user = decoded;
+    console.log("1" , req.user.id);
     next();
-  } catch (err) {
-    return res.status(401).json({ message: 'Unauthorized' });
   }
+  catch(error){
+    console.error("Error in authMiddleware : ", error);
+    return res.status(401).json({ message: 'Unauthorized' });
+  };
 };
 
 module.exports = authenticate;
