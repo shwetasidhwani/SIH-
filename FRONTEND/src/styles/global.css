@@ -24,133 +24,7 @@
   box-sizing: border-box;
 }
 
-/* Navbar list styling */
-.homepage-navbar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex; /* Horizontal layout */
-  align-items: center;
-}
 
-/* Navbar list item styling */
-.homepage-navbar ul li {
-  text-decoration: none;
-  margin-right: 10px; /* Space between list items */
-}
-
-/* Navbar links styling */
-.homepage-navbar li a {
-  font-weight: bold;
-  color: var(--primary-color);
-  font-family: var(--font-family-primary);
-  font-size: var(--font-size-medium);
-  text-decoration: none; /* Remove underline */
-  padding: 10px 15px;
-  position: relative;
-  transition: background-color var(--transition-speed) ease,
-    color var(--transition-speed) ease;
-  border-radius: var(--border-radius);
-}
-
-.homepage-navbar li a:hover {
-  background-color: var(--secondary-color);
-}
-
-/* Auth links container styling */
-.auth-links {
-  display: flex;
-  list-style-type: none;
-  align-items: center; /* Center-align the login and signup links */
-}
-
-/* Individual auth link item styling */
-.auth-links li {
-  margin-left: 20px;
-  position: relative; /* Needed for positioning the pseudo-element */
-}
-
-/* Auth link button styling */
-.auth-links li a {
-  display: inline-block;
-  color: var(--dark-text-color);
-  background-color: var(--secondary-color);
-  text-decoration: none;
-  padding: 10px 20px;
-  position: relative; /* For positioning the pseudo-element */
-  font-weight: bold;
-  transition: background-color var(--transition-speed) ease,
-    color var(--transition-speed) ease;
-  z-index: 2;
-}
-
-/* Before pseudo-element for staggered border effect */
-.auth-links li a::before {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  right: -5px;
-  bottom: -5px;
-  border: 2px solid var(--dark-text-color);
-  z-index: 1;
-}
-
-/* Main navbar container */
-.homepage-navbar {
-  display: flex;
-  align-items: center;
-  background-color: var(--background-color);
-  color: var(--primary-color);
-  padding: 30px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: background-color var(--transition-speed) ease;
-}
-
-/* Reset for website name */
-.homepage-navbar .website-name {
-  font-family: var(--font-family-primary);
-  font-size: var(--font-size-large);
-  font-weight: bold;
-  color: var(--primary-color);
-  margin-left: 70px;
-  margin-right: 230px;
-  text-decoration: none;
-  position: relative;
-  display: inline-block;
-}
-
-.homepage-navbar .website-name a {
-  text-decoration: none;
-  color: var(--primary-color);
-}
-
-/* Hover effect for website name */
-.homepage-navbar .website-name::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 100%;
-  height: 4px;
-  background-color: var(--secondary-color);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--transition-speed) ease;
-}
-
-.homepage-navbar .website-name:hover::after {
-  transform: scaleX(1);
-}
-
-.homepage-navbar .website-name:hover {
-  cursor: pointer;
-}
 
 .hero {
   display: flex;
@@ -164,8 +38,8 @@
   font-size: var(--font-size-hero);
   line-height: var(--line-height-hero);
   color: var(--primary-color);
-  margin-bottom: 40px;
-  margin-top: 200px;
+  margin-bottom: 0;
+  margin-top: 100px;
   text-align: center;
 }
 
@@ -197,7 +71,7 @@
   font-family: var(--font-family-primary);
   font-size: var(--font-size-support);
   line-height: var(--line-height-support);
-  margin-bottom:150px;
+  margin-bottom:70px;
 }
 
 /*STYLING FOR LOGIN PAGE*/

@@ -11,7 +11,7 @@ import Analytics from "./components/Analytics/Analytics";
 
 // Shweta imports
 import HomePage from "./components/HomePage";
-
+import Navbar from "./components/Navbar/Navbar";
 
 
 
@@ -91,6 +91,7 @@ const App = () => {
   return (
     <div className="app-container">
       <BrowserRouter>
+      <Navbar />
         <div className="content-wrapper">
           <Routes>
             {/* Dhruv routes */}
