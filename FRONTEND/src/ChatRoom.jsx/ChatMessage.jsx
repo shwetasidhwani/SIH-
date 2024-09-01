@@ -2,7 +2,7 @@ import React from 'react';
 import './ChatMessage.css';
 
 const ChatMessage = ({ message }) => {
-    console.log(message.user);
+    //console.log(message.user);
     return (
 
         <div className="chat-message">

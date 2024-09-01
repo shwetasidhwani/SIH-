@@ -13,7 +13,8 @@ const authRoutes = require("./routes/authRoutes");
 const queryRoute = require("./routes/queryRoute");
 const stationRoute = require('./routes/stationRoute');
 const chatRoutes = require('./routes/chatMessageRoute');
-
+const cron = require('node-cron');
+const ChatMessage = require('./models/chatMessageModel');
 
 
 
@@ -86,7 +87,15 @@ app.use('/api/llm', queryRoute);
 app.use('/api/station', stationRoute);
 app.use('/uploads/profilePictures', express.static(path.join(__dirname, 'uploads/profilePictures')));
 app.use('/api/chat', chatRoutes);
-
+cron.schedule('0 * * * *', async () => {
+  try {
+    const twoHoursAgo = new Date(Date.now() - 2 * 60 * 60 * 1000); // 2 hours in milliseconds
+    await ChatMessage.deleteMany({ timestamp: { $lt: twoHoursAgo } });
+    console.log('Chatroom cleared of messages older than 2 hours');
+  } catch (error) {
+    console.error('Error clearing old messages:', error);
+  }
+});
 
 
 
