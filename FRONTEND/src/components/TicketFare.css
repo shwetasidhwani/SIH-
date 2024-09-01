@@ -1,96 +1,108 @@
+/* Base styles for the page */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: var(--page-bg-color); /* Background color */
+  background-image: var(--page-bg-image); /* Background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--text-color); /* Text color */
+  font-family: Arial, sans-serif;
+}
+
 /* Overall container */
 .ticketfare-container {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 30px;
-    border-radius: 10px;
-    max-width: 500px;
-    margin: 50px auto;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    font-family: "Arial", sans-serif;
-  }
-  
-  /* Header styling */
-  .ticketfare-header h1 {
-    background-color: #ffd700;
-    padding: 10px;
-    border-radius: 10px 10px 0 0;
-    margin: -30px -30px 20px;
-    color: #333;
-    font-size: 24px;
-  }
-  
-  /* Form styling */
-  .ticketfare-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-  
-  .form-group {
-    width: 100%;
-  }
-  
-  .form-group label {
-    display: block;
-    font-size: 16px;
-    margin-bottom: 5px;
-    text-align: left;
-    color: #333;
-  }
-  
-  .form-group select {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #ced4da;
-    border-radius: 5px;
-    font-size: 16px;
-    background-color: #f9f9f9;
-    transition: border-color 0.3s;
-  }
-  
-  .form-group select:focus {
-    border-color: #007bff;
-  }
-  
-  /* Button styling */
-  #fare-cal-btn{
-    width: 100%;
-    padding: 15px;
-    font-size: 18px;
-    background-color: purple;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s;
-  }
-  
-  #fare-cal-btn:hover {
-    background-color: #9843e3;
-    box-shadow: 0 4px 10px #9843e3;
-  }
-  
-  /* Fare result */
-  .fare-result {
-    background-color: rgba(245, 245, 245, 0.9);
-    padding: 15px;
-    border-radius: 5px;
-    margin-top: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  .fare-result h3 {
-    font-size: 20px;
-    color: #333;
-  }
-  
-  .fare-result p {
-    font-size: 18px;
-    margin: 10px 0;
-    color: #333;
-  }
-  
-  
-  
+  background-color: var(--container-bg-color); /* Background color of the container */
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 50px auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Header styling */
+.ticketfare-header h1 {
+  background-color: var(--button-bg-color); /* Background color of header */
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  margin: -30px -30px 20px;
+  color: var(--button-text-color); /* Text color in header */
+  font-size: 24px;
+}
+
+/* Form styling */
+.ticketfare-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form-group label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.form-group select, 
+.form-group input[type="text"], 
+.form-group button {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--input-border-color); /* Border color for inputs and selects */
+  border-radius: 5px;
+  background-color: var(--input-bg-color); /* Background color for inputs and selects */
+  color: var(--text-color); /* Text color for inputs and selects */
+}
+
+/* Button styling */
+button {
+  background-color: var(--button-bg-color); /* Background color for buttons */
+  color: var(--button-text-color); /* Text color for buttons */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: none;
+}
+
+button:hover {
+  background-color: var(--button-bg-color-hover); /* Hover color for buttons */
+}
+
+/* Fare results styling */
+.fare-result {
+  margin-top: 20px;
+}
+
+.fare-result h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Colorblind mode selection buttons */
+.colorblind-options {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.colorblind-options button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--button-bg-color); /* Background color for colorblind mode buttons */
+  color: var(--button-text-color); /* Text color for colorblind mode buttons */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.colorblind-options button:hover {
+  background-color: var(--button-bg-color-hover); /* Hover color for colorblind mode buttons */
+}
