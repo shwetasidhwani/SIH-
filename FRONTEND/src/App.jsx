@@ -47,6 +47,7 @@ import Signup from "./Authentication/Signup";
 import Logout from "./Authentication/Logout";
 import QueryComponent from "./QueryComponent/QueryComponent";
 import StationInfo from "./StationInfo/StationInfo";
+import About from "./components/About";
 
 
 
@@ -92,7 +93,7 @@ const App = () => {
         <div className="content-wrapper">
           <Routes>
             {/* Dhruv routes */}
-
+            <Route path="/about" element={<About/>} />
 
 
 
