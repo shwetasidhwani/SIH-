@@ -12,7 +12,7 @@ import Analytics from "./components/Analytics/Analytics";
 // Shweta imports
 import HomePage from "./components/HomePage";
 import Navbar from "./components/Navbar/Navbar";
-
+import ChatBot from "./components/Chatbot";
 
 
 // Paritosh Imports
@@ -109,7 +109,7 @@ const App = () => {
             {/* Paritosh Routes */}
             <Route path="/ticketfare" element={<TicketFare />} />
             <Route path="/toandfrom" element={<ToFromSearch />} />
-            <Route path="/NearestStation1" element={<NearestStation1 />} />
+            <Route path="/NearestStations" element={<NearestStations />} />
             <Route path="/model" element={<GLBViewer />} />
 
 
@@ -138,6 +138,7 @@ const App = () => {
           </Routes>
         {/* Always include footer */}
         </div>
+        <ChatBot />
         <Footer />
       </BrowserRouter>
     </div>
