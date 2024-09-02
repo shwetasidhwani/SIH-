@@ -11,6 +11,7 @@
 
   /* Language Selector */
   .language-selector {
+    margin-top: 4rem;
     background-color: #2563eb;
     padding: 16px;
 
@@ -18,6 +19,8 @@
 
   }
   
+
+
   .language-dropdown {
     padding: 8px;
     border: 1px solid #d1d5db;

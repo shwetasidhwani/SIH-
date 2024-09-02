@@ -69,14 +69,14 @@ const Navbar = () => {
                 <button onClick={handleLogout} className="logout-btn">Log Out</button>
               </div>
             ) : (
-              <ul className="auth-links">
-                <li>
+              <div className="auth-links">
+                <p>
                   <Link to="/login" className="auth-link">Log In</Link>
-                </li>
-                <li>
+                </p>
+                <p>
                   <Link to="/signup" className="auth-link">Sign Up</Link>
-                </li>
-              </ul>
+                </p>
+              </div>
             )}
           </div>
           <div className="menu-toggle mobile-only">

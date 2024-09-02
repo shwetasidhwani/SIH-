@@ -9,32 +9,37 @@ html, body {
   background-position: center;
   background-repeat: no-repeat;
   color: var(--text-color); /* Text color */
-  font-family: Arial, sans-serif;
+  font-family:Consolas;
 }
 
 /* Overall container */
 .ticketfare-container {
+ 
   background-color: var(--container-bg-color); /* Background color of the container */
   padding: 30px;
+  border: 2px solid black;
   border-radius: 10px;
-  max-width: 500px;
+  max-width: 800px;
   margin: 50px auto;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
+  margin-top: 7rem;
 }
 
 /* Header styling */
 .ticketfare-header h1 {
   background-color: var(--button-bg-color); /* Background color of header */
   padding: 10px;
-  border-radius: 10px 10px 0 0;
-  margin: -30px -30px 20px;
+  border-radius: 15px 0px 15px 0px;
   color: var(--button-text-color); /* Text color in header */
-  font-size: 24px;
+  font-size: 1.8rem;
+
 }
 
 /* Form styling */
 .ticketfare-form {
+
+  font-size: 1.3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,18 +47,21 @@ html, body {
 }
 
 .form-group {
+  margin-top: 1rem;
+
   width: 100%;
 }
 
 .form-group label {
   display: block;
-  font-size: 16px;
+  font-size: 1.2rem;
   margin-bottom: 5px;
 }
 
 .form-group select, 
 .form-group input[type="text"], 
 .form-group button {
+  font-size: 1.2rem;
   width: 100%;
   padding: 10px;
   border: 1px solid var(--input-border-color); /* Border color for inputs and selects */
@@ -63,7 +71,8 @@ html, body {
 }
 
 /* Button styling */
-button {
+.colorblind-options button{
+  font-size: 1.3rem;
   background-color: var(--button-bg-color); /* Background color for buttons */
   color: var(--button-text-color); /* Text color for buttons */
   cursor: pointer;
@@ -71,8 +80,9 @@ button {
   border: none;
 }
 
-button:hover {
-  background-color: var(--button-bg-color-hover); /* Hover color for buttons */
+.colorblind-options button:hover {
+  background-color: rgb(46, 43, 138);
+  color:white ; /* Hover color for buttons */
 }
 
 /* Fare results styling */
@@ -81,9 +91,15 @@ button:hover {
 }
 
 .fare-result h3 {
-  font-size: 20px;
+  font-size: 1.5rem;
   margin-bottom: 10px;
 }
+
+.fare-result p {
+  font-size: 1.2rem;
+
+}
+
 
 /* Colorblind mode selection buttons */
 .colorblind-options {
@@ -104,5 +120,8 @@ button:hover {
 }
 
 .colorblind-options button:hover {
-  background-color: var(--button-bg-color-hover); /* Hover color for colorblind mode buttons */
+  opacity: 0.8;
+  background-color: var(--button-bg-color-hover); 
+  color: black;
+  border: 1px solid black;/* Hover color for colorblind mode buttons */
 }
