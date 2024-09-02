@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef,useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import "./Stationinfo.css";
@@ -153,7 +153,7 @@ const StationInfo = () => {
                   <li key={index} className="station-info-li-tags">{attraction}</li>
                 ))}
               </ul>
-              <label htmlFor="componentsDropdown"><strong>Select Component:</strong></label>
+              <label htmlFor="componentsDropdown" className="componentsDropdown"><strong>Select Component:</strong></label>
               <select
                 id="componentsDropdown"
                 value={selectedComponent}

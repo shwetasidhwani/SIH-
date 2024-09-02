@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState,useEffect,useRef} from "react";
 import "../styles/global.css";
 import Navbar from "./NavBar";
 import HeroComponent from "./HeroComponent";
