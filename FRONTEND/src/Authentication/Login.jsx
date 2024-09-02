@@ -3,9 +3,14 @@ import axios from "axios";
 import "../styles/global.css";
 import { Link } from "react-router-dom";
 
-const Login = ({ onLogin }) => {
-  const [formValues, setFormValues] = useState({ email: "", password: "" });
 
+
+  
+
+
+const Login = ({ onLogin }) => {
+
+  const [formValues, setFormValues] = useState({ email: "", password: "" });
   const handleChange = (e) => {
     setFormValues({
       ...formValues,
@@ -35,7 +40,7 @@ const Login = ({ onLogin }) => {
       <div className="login-container">
         <div className="login-left">
           <div className="login-left-content">
-            <h1>Welcome back to Station Sathi</h1>
+            <h1 >Welcome back to Station Sathi</h1>
             <p className="login-description">Connecting people..</p>
           </div>
         </div>
@@ -65,6 +70,8 @@ const Login = ({ onLogin }) => {
               Sign In
             </button>
 
+ 
+      
             <Link to="/signup" id="loginpage-signup-link">
               {" "}
               Don't have an account?{" "}

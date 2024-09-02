@@ -2,6 +2,7 @@ import React from 'react';
 import './Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import {Link} from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -41,7 +42,7 @@ const Footer = () => {
           <div className="footer-column">
             <h4>Company</h4>
             <ul>
-              <li><a href="#!">Terms & conditions</a></li>
+              <li><Link to="/station">Neareststn</Link></li>
               <li><a href="#!">Privacy Policy</a></li>
             </ul>
           </div>

@@ -1,4 +1,6 @@
-import React, { useRef } from "react";
+import React from "react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import "../styles/global.css";
 
 const HeroComponent = () => {
   const speakTimeoutRef = useRef(null);
@@ -29,6 +31,9 @@ const HeroComponent = () => {
           Discover real-time guidance and simplify your travel with convenient
           insights into stations and routes.
         </p>
+        <Link to="/about" className="about-us-hero">
+          Learn More
+        </Link>
       </div>
     </div>
   );

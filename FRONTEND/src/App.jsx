@@ -3,13 +3,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 
 // Dhruv imports
+import About from "./components/About";
+import Analytics from "./components/Analytics/Analytics";
 
 
 
 
 // Shweta imports
 import HomePage from "./components/HomePage";
-
+import Navbar from "./components/Navbar/Navbar";
 
 
 
@@ -18,7 +20,7 @@ import TicketFare from "./components/TicketFare";
 import ToFromSearch from "./components/ToFromSearch";
 import Footer from "./components/Footer";
 import NearestStations from "./components/NearestStations";
-
+import GLBViewer from "./components/GLBViewer";
 
 
 
@@ -89,11 +91,12 @@ const App = () => {
   return (
     <div className="app-container">
       <BrowserRouter>
+      <Navbar />
         <div className="content-wrapper">
           <Routes>
             {/* Dhruv routes */}
-
-
+            <Route path="/about" element={<About/>} />
+            <Route path="/analytics" element={<Analytics/>} />
 
 
             {/* Shweta Routes */}
@@ -106,6 +109,7 @@ const App = () => {
             <Route path="/ticketfare" element={<TicketFare />} />
             <Route path="/toandfrom" element={<ToFromSearch />} />
             <Route path="/neareststn" element={<NearestStations />} />
+            <Route path="/model" element={<GLBViewer />} />
 
 
 

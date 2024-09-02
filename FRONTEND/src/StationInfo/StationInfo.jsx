@@ -1,5 +1,6 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import "./Stationinfo.css";
 
 import sourceIcon from './source.png';
@@ -112,6 +113,7 @@ const StationInfo = () => {
     };
   };
   
+
   return (
     <>
       <div className="station-info-outercontainer">
@@ -164,6 +166,10 @@ const StationInfo = () => {
                   </option>
                 ))}
               </select>
+
+              {/* New Button for 3D View */}
+              <Link to="/model" className="view-in-3d-button">View in 3D</Link>
+ {/* Placeholder href */}
             </div>
             <div className="station-info-station-map-image-container">
               <h2 id="station-info-station-layout-heading">Station Layout</h2>
@@ -177,35 +183,34 @@ const StationInfo = () => {
                   id="station-info-map-image"
                   ref={mapImageRef}
                 />
-               {userMarker && (
-  <img
-    src={sourceIcon}
-    alt="User Location"
-    style={{
-      position: "absolute",
-      left: `${userMarker.x}%`,
-      top: `${userMarker.y}%`,
-      width: "20px", // Adjust size as needed
-      height: "20px",
-      transform: "translate(-50%, -100%)", // Centers the icon
-    }}
-  />
-)}
-{selectedComponent && (
-  <img
-    src={destinationIcon}
-    alt="Destination"
-    style={{
-      position: "absolute",
-      left: `${getSelectedComponentPosition()?.x}%`,
-      top: `${getSelectedComponentPosition()?.y}%`,
-      width: "10px", // Adjust size as needed
-      height: "10px",
-      transform: "translate(-50%, -100%)", // Centers the icon
-    }}
-  />
-)}
-
+                {userMarker && (
+                  <img
+                    src={sourceIcon}
+                    alt="User Location"
+                    style={{
+                      position: "absolute",
+                      left: `${userMarker.x}%`,
+                      top: `${userMarker.y}%`,
+                      width: "20px", // Adjust size as needed
+                      height: "20px",
+                      transform: "translate(-50%, -100%)", // Centers the icon
+                    }}
+                  />
+                )}
+                {selectedComponent && (
+                  <img
+                    src={destinationIcon}
+                    alt="Destination"
+                    style={{
+                      position: "absolute",
+                      left: `${getSelectedComponentPosition()?.x}%`,
+                      top: `${getSelectedComponentPosition()?.y}%`,
+                      width: "10px", // Adjust size as needed
+                      height: "10px",
+                      transform: "translate(-50%, -100%)", // Centers the icon
+                    }}
+                  />
+                )}
                 {userMarker && selectedComponent && (
                   <div
                     className="route-line"
