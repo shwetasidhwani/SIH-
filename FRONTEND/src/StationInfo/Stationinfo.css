@@ -148,3 +148,18 @@
   display: block;
 }
 
+#stop-voice-button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#stop-voice-button:hover {
+  background-color: darkred;
+}
+
+

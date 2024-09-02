@@ -2,14 +2,41 @@ import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import "./Stationinfo.css";
 
-const MAX_MARKERS = 1;
+import sourceIcon from './source.png';
+import destinationIcon from './destination.png';
 
 const StationInfo = () => {
   const [stationName, setStationName] = useState("");
   const [stationData, setStationData] = useState(null);
-  const [markers, setMarkers] = useState([]);
+  const [userMarker, setUserMarker] = useState(null);
   const [selectedComponent, setSelectedComponent] = useState("");
-  const mapImageRef = useRef(null); // Ref to the map image
+  const [isSpeaking, setIsSpeaking] = useState(false); // Track speech state
+  const mapImageRef = useRef(null);
+
+  useEffect(() => {
+    if (stationData) {
+      // Read out the station name and other dynamic information
+      speak(`Station Name: ${stationData.stationName}`);
+      speak(`Next Station: ${stationData.nextStation}`);
+      speak(`Previous Station: ${stationData.previousStation}`);
+      
+      stationData.nearbyAttractions.forEach(attraction => {
+        speak(`Nearby Attraction: ${attraction}`);
+      });
+    }
+  }, [stationData]);
+
+  const speak = (text) => {
+    if (!text || !isSpeaking) return;
+    
+    const utterance = new SpeechSynthesisUtterance(text);
+    speechSynthesis.speak(utterance);
+  };
+
+  const stopSpeaking = () => {
+    speechSynthesis.cancel();
+    setIsSpeaking(false); // Set to false to stop speaking
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,8 +45,9 @@ const StationInfo = () => {
         `http://localhost:3000/api/station/${stationName}`
       );
       setStationData(response.data);
-      setMarkers([]);
+      setUserMarker(null);
       setSelectedComponent("");
+      setIsSpeaking(true); // Enable speaking
     } catch (error) {
       console.error("Error fetching station data: ", error);
       setStationData(null);
@@ -29,26 +57,21 @@ const StationInfo = () => {
   const handleImageClick = (e) => {
     if (!stationData) return;
 
-    if (markers.length >= MAX_MARKERS) {
-      console.log(`Cannot add more than ${MAX_MARKERS} marker.`);
-      return;
-    }
-
     const rect = e.target.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    const x = (e.clientX - rect.left) / rect.width * 100;
+    const y = (e.clientY - rect.top) / rect.height * 100;
 
-    setMarkers([
-      { x: (x / rect.width) * 100, y: (y / rect.height) * 100 }
-    ]);
+    setUserMarker({ x, y });
+    speak("User location set on the map");
   };
 
   const handleComponentSelect = (e) => {
     setSelectedComponent(e.target.value);
+    speak(`Selected component: ${e.target.value}`);
   };
 
-  const getHighlightPosition = () => {
-    if (!mapImageRef.current || !selectedComponent) return { left: 0, top: 0 };
+  const getSelectedComponentPosition = () => {
+    if (!mapImageRef.current || !selectedComponent) return null;
 
     const rect = mapImageRef.current.getBoundingClientRect();
     const selectedComponentData = stationData.components.find(
@@ -57,13 +80,38 @@ const StationInfo = () => {
 
     if (selectedComponentData) {
       return {
-        left: `${(selectedComponentData.x / rect.width) * 100}%`,
-        top: `${(selectedComponentData.y / rect.height) * 100}%`
+        x: (selectedComponentData.x / rect.width) * 100,
+        y: (selectedComponentData.y / rect.height) * 100
       };
     }
-    return { left: 0, top: 0 };
+    return null;
   };
 
+  const getLineStyle = () => {
+    if (!userMarker || !selectedComponent) return {};
+  
+    const selectedComponentPos = getSelectedComponentPosition();
+    if (!selectedComponentPos) return {};
+  
+    const deltaX = selectedComponentPos.x - userMarker.x;
+    const deltaY = selectedComponentPos.y - userMarker.y;
+    
+    // Calculate the angle and the full distance between the points
+    const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+    const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+  
+    return {
+      position: "absolute",
+      left: `${userMarker.x}%`,
+      top: `${userMarker.y}%`,
+      width: `${distance + 1.75}%`,  // Increase the line length to ensure it reaches the destination icon
+      height: "1.5px",  // Adjust the thickness of the line if needed
+      backgroundColor: "blue",
+      transform: `rotate(${angle}deg)`,
+      transformOrigin: "0 0",
+    };
+  };
+  
   return (
     <>
       <div className="station-info-outercontainer">
@@ -103,7 +151,6 @@ const StationInfo = () => {
                   <li key={index} className="station-info-li-tags">{attraction}</li>
                 ))}
               </ul>
-              {/* Dropdown for Components */}
               <label htmlFor="componentsDropdown"><strong>Select Component:</strong></label>
               <select
                 id="componentsDropdown"
@@ -128,35 +175,45 @@ const StationInfo = () => {
                   src={`http://localhost:3000${stationData.mapUrl}`}
                   alt="Station Map"
                   id="station-info-map-image"
-                  ref={mapImageRef} // Attach ref to the map image
+                  ref={mapImageRef}
                 />
-                {markers.map((marker, index) => (
+               {userMarker && (
+  <img
+    src={sourceIcon}
+    alt="User Location"
+    style={{
+      position: "absolute",
+      left: `${userMarker.x}%`,
+      top: `${userMarker.y}%`,
+      width: "20px", // Adjust size as needed
+      height: "20px",
+      transform: "translate(-50%, -100%)", // Centers the icon
+    }}
+  />
+)}
+{selectedComponent && (
+  <img
+    src={destinationIcon}
+    alt="Destination"
+    style={{
+      position: "absolute",
+      left: `${getSelectedComponentPosition()?.x}%`,
+      top: `${getSelectedComponentPosition()?.y}%`,
+      width: "10px", // Adjust size as needed
+      height: "10px",
+      transform: "translate(-50%, -100%)", // Centers the icon
+    }}
+  />
+)}
+
+                {userMarker && selectedComponent && (
                   <div
-                    key={index}
-                    className="marker"
-                    style={{
-                      left: `${marker.x}%`,
-                      top: `${marker.y}%`
-                    }}
-                  >
-                    <div className="marker-tooltip">Marker {index + 1}</div>
-                  </div>
-                ))}
-                {/* Highlight the selected component */}
-                {selectedComponent && (
-                  <div
-                    className="highlight"
-                    style={{
-                      position: "absolute",
-                      width: "20px",
-                      height: "20px",
-                      backgroundColor: "rgba(255, 0, 0, 0.5)",
-                      borderRadius: "50%",
-                      ...getHighlightPosition(), // Calculate position
-                    }}
+                    className="route-line"
+                    style={getLineStyle()}
                   />
                 )}
               </div>
+              <button onClick={stopSpeaking} id="stop-voice-button">Stop Voice Assistance</button>
             </div>
           </div>
         )}

@@ -6,7 +6,9 @@ const ChatMessage = ({ message }) => {
     return (
 
         <div className="chat-message">
-            <strong>(User ID){message.user}</strong>: {message.message}
+            <strong>(User ID){message.user}</strong> <br />
+            <strong>Update : </strong>{message.message} <br />
+            Time : {message.timestamp}
         </div>
     );
 };
