@@ -7,7 +7,6 @@ const ChatRoom = () => {
     const [messages, setMessages] = useState([]);
     const [newMessage, setNewMessage] = useState('');
     const [errorMessage , setErrorMessage] = useState('');
-    const filter = new Filter();
 
     useEffect(() => {
         // Initialize messages
