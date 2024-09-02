@@ -51,8 +51,7 @@ const Navbar = () => {
           <div className="links desktop-only">
             <Link to="/" className="nav-link">Home</Link>
             <Link to="/about" className="nav-link">About Us</Link>
-            <Link to="/inventory" className="nav-link">Inventory</Link>
-            <Link to="/cart" className="nav-link">Cart</Link>
+            <Link to="/Analytics" className="nav-link">Analytics</Link>
           </div>
           <div className="user-actions desktop-only">
             {user ? (

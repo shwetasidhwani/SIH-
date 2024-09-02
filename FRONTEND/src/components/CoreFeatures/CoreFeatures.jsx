@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './CoreFeatures.css';
-import voiceAssistance from '../../assets/voice_assistance.jpg';
-import threeDModeling from '../../assets/3d_modeling.jpg';
-import virtualChatroom from '../../assets/virtual_chatroom.jpg';
-import realtimeInfo from '../../assets/realtime_info.jpg';
-import platformNavigation from '../../assets/platform_navigation.jpg';
+import threeDModeling from "../../assets/3D.jpeg";
+import voiceAssistance from "../../assets/voice.jpg";
+import virtualChatroom from "../../assets/chat.jpg";
+import realtimeInfo from "../../assets/realtime.jpg";
+import platformNavigation from "../../assets/nav.jpg"
 
 const CoreFeatures = () => {
   const [currentIndex, setCurrentIndex] = useState(1); // Start from 1 to show the first card correctly
@@ -13,7 +13,7 @@ const CoreFeatures = () => {
 
   const features = [
     { img: voiceAssistance, title: 'Voice Assistance', desc: 'Experience hands-free navigation with our smart voice assistance.' },
-    { img: threeDModeling, title: '3-D Modeling', desc: 'Explore detailed 3D models of station layouts for better understanding.' },
+    { img: threeDModeling, title: '3-D Modeling', desc: 'Explore detailed 3D models of station layouts. ' },
     { img: virtualChatroom, title: 'Virtual Chatroom', desc: 'Engage in real-time conversations and get instant assistance.' },
     { img: realtimeInfo, title: 'Realtime Info', desc: 'Stay updated with live information about station facilities and services.' },
     { img: platformNavigation, title: 'Platform Navigation', desc: 'Navigate through platforms with ease using our intuitive maps.' }

@@ -2,6 +2,7 @@
 
 /* Container for the entire feature section */
 .core-feature {
+    margin-top: 60px;
     padding: 50px 20px;
     background-color: #000; /* Black background for the entire section */
     text-align: center;
