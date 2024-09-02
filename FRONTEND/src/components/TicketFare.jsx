@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./TicketFare.css";
+import NearestStations from "./NearestStations";
 
 const stations = [
   "CST", "Masjid", "Sandhurst Road", "Dockyard Road", "Reay Road",
@@ -124,7 +125,7 @@ function TicketFare() {
         <div className="form-group">
           <label>From</label>
           <select value={startStation} onChange={(e) => setStartStation(e.target.value)}>
-            <option value="">Select Station</option>
+            <option className="ticket-fare-drop-down">Select Station</option>
             {stations.map((station, index) => (
               <option key={index} value={station}>{station}</option>
             ))}
@@ -134,7 +135,7 @@ function TicketFare() {
         <div className="form-group">
           <label>To</label>
           <select value={endStation} onChange={(e) => setEndStation(e.target.value)}>
-            <option value="">Select Station</option>
+            <option className="ticket-fare-drop-down">Select Station</option>
             {stations.map((station, index) => (
               <option key={index} value={station}>{station}</option>
             ))}
@@ -155,12 +156,13 @@ function TicketFare() {
       )}
 
       <div className="colorblind-options">
-        <button onClick={() => setColorBlindMode("normal")}>Normal Vision</button>
-        <button onClick={() => setColorBlindMode("deuteranopia")}>Deuteranopia</button>
-        <button onClick={() => setColorBlindMode("protanopia")}>Protanopia</button>
-        <button onClick={() => setColorBlindMode("tritanopia")}>Tritanopia</button>
-        <button onClick={() => setColorBlindMode("achromatopsia")}>Achromatopsia</button>
+        <button onClick={() => setColorBlindMode("normal")} className="ticket-fare-button">Normal Vision</button>
+        <button onClick={() => setColorBlindMode("deuteranopia")} className="ticket-fare-button">Deuteranopia</button>
+        <button onClick={() => setColorBlindMode("protanopia")} className="ticket-fare-button">Protanopia</button>
+        <button onClick={() => setColorBlindMode("tritanopia")} className="ticket-fare-button">Tritanopia</button>
+        <button onClick={() => setColorBlindMode("achromatopsia")} className="ticket-fare-button">Achromatopsia</button>
       </div>
+      <NearestStations/>
     </div>
   );
 }

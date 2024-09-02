@@ -6,6 +6,8 @@ import axios from 'axios';
 const ChatRoom = () => {
     const [messages, setMessages] = useState([]);
     const [newMessage, setNewMessage] = useState('');
+    const [errorMessage , setErrorMessage] = useState('');
+    const filter = new Filter();
 
     useEffect(() => {
         // Initialize messages
@@ -20,6 +22,13 @@ const ChatRoom = () => {
 
     const handleSendMessage = async () => {
         if (newMessage.trim()) {
+
+            if (filter.isProfane(newMessage)) {
+                setErrorMessage('Your message contains inappropriate content.');
+                return;
+            }
+
+            setErrorMessage('');
             await axios.post('http://localhost:3000/api/chat/message', { message: newMessage }, { withCredentials: true })
                 .then(response => {
                     console.log(response.data); 

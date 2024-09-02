@@ -12,13 +12,14 @@ import Analytics from "./components/Analytics/Analytics";
 // Shweta imports
 import HomePage from "./components/HomePage";
 import Navbar from "./components/Navbar/Navbar";
-
+import ChatBot from "./components/Chatbot";
 
 
 // Paritosh Imports
 import TicketFare from "./components/TicketFare";
 import ToFromSearch from "./components/ToFromSearch";
 import Footer from "./components/Footer";
+import NearestStation1 from "./components/NearestStations1";
 import NearestStations from "./components/NearestStations";
 import GLBViewer from "./components/GLBViewer";
 
@@ -108,8 +109,9 @@ const App = () => {
             {/* Paritosh Routes */}
             <Route path="/ticketfare" element={<TicketFare />} />
             <Route path="/toandfrom" element={<ToFromSearch />} />
-            <Route path="/neareststn" element={<NearestStations />} />
+            <Route path="/NearestStations" element={<NearestStations />} />
             <Route path="/model" element={<GLBViewer />} />
+
 
 
 
@@ -136,6 +138,7 @@ const App = () => {
           </Routes>
         {/* Always include footer */}
         </div>
+        <ChatBot />
         <Footer />
       </BrowserRouter>
     </div>
