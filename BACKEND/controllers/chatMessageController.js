@@ -1,5 +1,7 @@
 const ChatMessage = require('../models/chatMessageModel');
+const badWords = require('bad-words');
 
+const filter = new badWords();
 const postMessage = async (req, res) => {
   try {
     console.log("Inside postMessage");
@@ -7,6 +9,12 @@ const postMessage = async (req, res) => {
     const { message } = req.body;
     console.log(req.body, req.user);
     //console.log(req.user.id, req.user.id);
+
+    if (filter.isProfane(message)) {
+      return res.status(400).json({ error: 'Message contains inappropriate content' });
+    }
+
+    
     const chatMessage = new ChatMessage({
       user: req.user.id, 
       message
