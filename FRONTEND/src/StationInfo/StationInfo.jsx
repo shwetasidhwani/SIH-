@@ -121,7 +121,8 @@ const StationInfo = () => {
           <h3 id="station-info-station-input-container-heading">Station Information</h3>
           <p>Get information regarding the station you want to visit</p>
           <p>1.Type in the name of the station you want to know more about.</p>
-          <p>2.Select one of the components and check the Station Layout  </p>
+          <p>2.Select one of the components and check the Station Layout 
+             </p>
           <p>3.For a better view of the station You can also view its 3d model</p>
           <input
             type="text"
@@ -196,8 +197,8 @@ const StationInfo = () => {
                       position: "absolute",
                       left: `${userMarker.x}%`,
                       top: `${userMarker.y}%`,
-                      width: "20px", // Adjust size as needed
-                      height: "20px",
+                      width: "40px", // Adjust size as needed
+                      height: "40px",
                       transform: "translate(-50%, -100%)", // Centers the icon
                     }}
                   />
@@ -210,8 +211,8 @@ const StationInfo = () => {
                       position: "absolute",
                       left: `${getSelectedComponentPosition()?.x}%`,
                       top: `${getSelectedComponentPosition()?.y}%`,
-                      width: "10px", // Adjust size as needed
-                      height: "10px",
+                      width: "40px", // Adjust size as needed
+                      height: "40px",
                       transform: "translate(-50%, -100%)", // Centers the icon
                     }}
                   />
