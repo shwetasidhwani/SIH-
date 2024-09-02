@@ -19,6 +19,7 @@ import Navbar from "./components/Navbar/Navbar";
 import TicketFare from "./components/TicketFare";
 import ToFromSearch from "./components/ToFromSearch";
 import Footer from "./components/Footer";
+import NearestStation1 from "./components/NearestStations1";
 import NearestStations from "./components/NearestStations";
 import GLBViewer from "./components/GLBViewer";
 
@@ -108,8 +109,9 @@ const App = () => {
             {/* Paritosh Routes */}
             <Route path="/ticketfare" element={<TicketFare />} />
             <Route path="/toandfrom" element={<ToFromSearch />} />
-            <Route path="/neareststn" element={<NearestStations />} />
+            <Route path="/NearestStation1" element={<NearestStation1 />} />
             <Route path="/model" element={<GLBViewer />} />
+
 
 
 

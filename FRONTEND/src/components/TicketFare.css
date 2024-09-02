@@ -18,7 +18,7 @@ html, body {
   padding: 30px;
   border-radius: 10px;
   max-width: 500px;
-  margin: 50px auto;
+  margin: 100px auto;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
@@ -39,6 +39,11 @@ html, body {
   flex-direction: column;
   align-items: center;
   gap: 15px;
+  font-size: 16px;
+}
+
+.ticket-fare-drop-down {
+  font-size: 20px;
 }
 
 .form-group {
@@ -47,7 +52,7 @@ html, body {
 
 .form-group label {
   display: block;
-  font-size: 16px;
+  font-size: 25px;
   margin-bottom: 5px;
 }
 
@@ -63,7 +68,7 @@ html, body {
 }
 
 /* Button styling */
-button {
+.ticket-fare-button {
   background-color: var(--button-bg-color); /* Background color for buttons */
   color: var(--button-text-color); /* Text color for buttons */
   cursor: pointer;
@@ -71,9 +76,11 @@ button {
   border: none;
 }
 
-button:hover {
+.ticket-fare-button:hover {
   background-color: var(--button-bg-color-hover); /* Hover color for buttons */
-}
+  color: #000;
+  border: 2px solid #000;
+} 
 
 /* Fare results styling */
 .fare-result {
