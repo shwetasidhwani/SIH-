@@ -1,6 +1,6 @@
 /* Navbar Container */
 .navbar {
-    background-color: #2d3748;
+    background-color: #333;
     color: #ffffff;
     position: fixed;
     top: 0;
@@ -11,7 +11,7 @@
   
   /* Container */
   .container {
-    max-width: 1120px;
+    max-width: 1320px;
     margin: 0 auto;
     padding: 0 16px;
   }
@@ -21,7 +21,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 64px;
+    height: 6rem;
   }
   
   /* Brand Section */
@@ -45,7 +45,7 @@
   }
   
   .brand-text {
-    font-size: 20px;
+    font-size: 1.8rem;
     font-weight: bold;
     position: relative;
   }
@@ -76,7 +76,7 @@
   .nav-link {
     padding: 8px 12px;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 1.5rem;
     font-weight: medium;
     text-decoration: none;
     color: #ffffff;
@@ -84,7 +84,7 @@
   }
   
   .nav-link:hover {
-    background-color: #4a5568;
+    background-color: #4e93ae;
   }
   
   /* User Actions */
@@ -129,6 +129,9 @@
   }
   
   .auth-link {
+    margin-right: 0.7rem;
+    margin-left: 0.3rem;
+    font-size: 1.5rem;
     color: #ffffff;
     text-decoration: none;
     transition: color 0.3s ease;

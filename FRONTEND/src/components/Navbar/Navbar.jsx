@@ -50,9 +50,9 @@ const Navbar = () => {
           </div>
           <div className="links desktop-only">
             <Link to="/" className="nav-link">Home</Link>
+            <Link to="/station" className="nav-link">Station Info</Link>
+            <Link to="/analytics" className="nav-link">Analytics</Link>
             <Link to="/about" className="nav-link">About Us</Link>
-            <Link to="/inventory" className="nav-link">Inventory</Link>
-            <Link to="/cart" className="nav-link">Cart</Link>
           </div>
           <div className="user-actions desktop-only">
             {user ? (
@@ -69,14 +69,14 @@ const Navbar = () => {
                 <button onClick={handleLogout} className="logout-btn">Log Out</button>
               </div>
             ) : (
-              <ul className="auth-links">
-                <li>
+              <div className="auth-links">
+                <p>
                   <Link to="/login" className="auth-link">Log In</Link>
-                </li>
-                <li>
+                </p>
+                <p>
                   <Link to="/signup" className="auth-link">Sign Up</Link>
-                </li>
-              </ul>
+                </p>
+              </div>
             )}
           </div>
           <div className="menu-toggle mobile-only">
