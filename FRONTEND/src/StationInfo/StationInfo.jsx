@@ -153,7 +153,7 @@ const StationInfo = () => {
                   <li key={index} className="station-info-li-tags">{attraction}</li>
                 ))}
               </ul>
-              <label htmlFor="componentsDropdown"><strong>Select Component:</strong></label>
+              <label htmlFor="componentsDropdown" className="componentsDropdown"><strong>Select Component:</strong></label>
               <select
                 id="componentsDropdown"
                 value={selectedComponent}

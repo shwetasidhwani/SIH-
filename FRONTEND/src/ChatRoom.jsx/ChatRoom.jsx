@@ -8,8 +8,8 @@ const ChatRoom = () => {
     const [newMessage, setNewMessage] = useState('');
 
     useEffect(() => {
-        //init msgs
-        axios.get('http://localhost:3000/api/chat/messages' , {withCredentials : true})
+        // Initialize messages
+        axios.get('http://localhost:3000/api/chat/messages', { withCredentials: true })
             .then(response => {
                 setMessages(response.data);
             })
@@ -20,7 +20,7 @@ const ChatRoom = () => {
 
     const handleSendMessage = async () => {
         if (newMessage.trim()) {
-            await axios.post('http://localhost:3000/api/chat/message', { message: newMessage} ,{ withCredentials : true })
+            await axios.post('http://localhost:3000/api/chat/message', { message: newMessage }, { withCredentials: true })
                 .then(response => {
                     console.log(response.data); 
                     setMessages([...messages, response.data]);
@@ -35,10 +35,13 @@ const ChatRoom = () => {
 
     return (
         <div className="chatroom">
+            <h1 className="chatroom-header">Virtual Chatroom</h1>
+            <p className="chatroom-instructions">Please be respectful and courteous. Type your message below and click "Send" to participate in the chat.</p>
             <div className="chat-window">
-                 Virtual ChatRooma
                 {messages.map((msg) => (
-                    <ChatMessage key={msg._id} message={msg} />
+                    <div className="message-card" key={msg._id}>
+                        <ChatMessage message={msg} />
+                    </div>
                 ))}
             </div>
             <div className="input-container">
