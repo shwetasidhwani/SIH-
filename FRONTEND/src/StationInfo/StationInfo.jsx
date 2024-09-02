@@ -120,6 +120,9 @@ const StationInfo = () => {
         <form onSubmit={handleSubmit} className="station-info-form-container">
           <h3 id="station-info-station-input-container-heading">Station Information</h3>
           <p>Get information regarding the station you want to visit</p>
+          <p>1.Type in the name of the station you want to know more about.</p>
+          <p>2.Select one of the components and check the Station Layout  </p>
+          <p>3.For a better view of the station You can also view its 3d model</p>
           <input
             type="text"
             value={stationName}
@@ -134,27 +137,28 @@ const StationInfo = () => {
           <div className="station-info-output-container">
             <div className="station-info-information">
               <h3 id="station-info-station-name">{stationData.stationName}</h3>
-              <p className="station-info-ptags">
+              <div className="station-info-next-stn-container"><p className="station-info-ptags">
                 <strong>Next Station:</strong> {stationData.nextStation} (
                 {stationData.distanceToNextStation},{" "}
                 {stationData.timeToNextStation})
               </p>
-              <p className="station-info-ptags">
+               <p className="station-info-ptags">
                 <strong>Previous Station: </strong>
                 {stationData.previousStation} (
                 {stationData.distanceToPreviousStation},{" "}
                 {stationData.timeToPreviousStation})
-              </p>
-              <p className="station-info-pts">
-                <strong>Nearby Attractions: </strong>
+              </p></div>
+              <div className="station-info-nearby-attraction-container"> <p className="station-info-pts">
+                <strong id="nearbyattraction-title">Nearby Attractions: </strong>
               </p>
               <ul>
                 {stationData.nearbyAttractions.map((attraction, index) => (
                   <li key={index} className="station-info-li-tags">{attraction}</li>
                 ))}
-              </ul>
-              <label htmlFor="componentsDropdown" className="componentsDropdown"><strong>Select Component:</strong></label>
-              <select
+              </ul></div>
+              <div className="station-info-functionalities">
+              <label htmlFor="componentsDropdown" className="componentsDropdown-label"><strong>Select Component:</strong></label>
+              <select 
                 id="componentsDropdown"
                 value={selectedComponent}
                 onChange={handleComponentSelect}
@@ -170,6 +174,7 @@ const StationInfo = () => {
               {/* New Button for 3D View */}
               <Link to="/model" className="view-in-3d-button">View in 3D</Link>
  {/* Placeholder href */}
+ </div>
             </div>
             <div className="station-info-station-map-image-container">
               <h2 id="station-info-station-layout-heading">Station Layout</h2>

@@ -1,7 +1,5 @@
 const ChatMessage = require('../models/chatMessageModel');
-const badWords = require('bad-words');
 
-const filter = new badWords();
 const postMessage = async (req, res) => {
   try {
     console.log("Inside postMessage");

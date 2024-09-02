@@ -1,6 +1,6 @@
-
 .station-info-outercontainer {
-  font-family: Consolas,monaco,monospace;
+  margin-top: 5rem;
+  font-family: Consolas, monaco, monospace;
   background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
@@ -13,30 +13,30 @@
 }
 
 .station-info-form-container {
-    border-radius: 10px;
-    color: white;
-    padding: 5px;
+  border-radius: 10px;
+  color: white;
+  padding: 5px;
   display: flex;
   align-items: center;
   text-align: center;
   margin-top: 2rem;
   background-color: #333333;
-  height: 9rem;
-  width: 50%;
+  height: 15rem;
+  width: 80%;
   margin-bottom: 10px;
   padding-bottom: 5px;
 }
 
-#station-info-station-input-container-heading{
-    font-size: 1.5rem;
+#station-info-station-input-container-heading {
+  font-size: 1.5rem;
 }
 
 #station-info-form-input {
-    font-size: 1.3rem;
+  font-size: 1.3rem;
   margin-top: 10px;
   margin-bottom: 10px;
   text-align: center;
-  width:30rem;
+  width: 30rem;
   position: relative;
   overflow: hidden;
   background-color: #f0f0f0;
@@ -44,11 +44,11 @@
 }
 
 #station-info-form-button {
-    color: rgb(224, 210, 210);
-    font-size: 1.2rem ;
-    width: 7rem;
-    border: 2px solid rgb(224, 210, 210);
-    border-radius: 20px;
+  color: rgb(224, 210, 210);
+  font-size: 1.2rem;
+  width: 7rem;
+  border: 2px solid rgb(224, 210, 210);
+  border-radius: 20px;
   background: linear-gradient(90deg, transparent, transparent) center/0% 100% no-repeat;
   transition: background-size 0.2s;
   margin-bottom: 5px;
@@ -62,12 +62,10 @@
   border: 2px solid black;
 }
 
-
-
 .station-info-output-container {
-    color: white;
-    border-radius: 15px;
-  width: 70%;
+  color: white;
+  border-radius: 15px;
+  width: 90%;
   display: flex;
   flex-direction: row;
   background-color: #333333;
@@ -80,29 +78,85 @@
   padding-top: 3rem;
 }
 
-#station-infostation-name{
-    font-size: 3rem;
-    margin-bottom: 1rem;
+.station-info-information > div {
+  opacity: 0; /* Initially hide the individual divs */
+  animation: fadeInElement 0.5s ease-in-out forwards;
 }
 
-.station-info-ptags{
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
+@keyframes fadeInElement {
+  from {
+    opacity: 0;
+    transform: translateY(10px); /* Optional: Add a slight slide-up effect */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.station-info-li-tags{
-    margin-top: 0.5rem;
-    font-size: 1.1rem;
+.station-info-information > div:nth-child(1) {
+  animation-delay: 0.5s; /* First div fades in first */
+}
+
+.station-info-information > div:nth-child(2) {
+  animation-delay: 1s; /* Second div fades in after the first */
+}
+
+.station-info-information > div:nth-child(3) {
+  animation-delay: 1.5s; /* Third div fades in after the second */
+}
+
+.station-info-information > div:nth-child(4) {
+  animation-delay: 2s; /* Fourth div fades in after the third */
+}
+
+#station-info-station-name {
+  font-size: 3rem;
+}
+
+#station-infostation-name {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.station-info-next-stn-container {
+  margin-top: 2rem;
+  padding: 0.5rem;
+  font-size: 1.4rem;
+  background-color: #3d5b76;
+  border: none;
+  border-radius: 5px;
+}
+
+.station-info-ptags {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.station-info-nearby-attraction-container {
+  margin-top: 2rem;
+  background-color: #3d5b76;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.8rem;
+  padding: 1rem;
+  padding-left: 2rem;
+}
+
+.station-info-li-tags {
+  text-align: left;
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
 }
 
 .station-info-station-map-image-container {
-    margin-left: 3rem;
+  margin-left: 3rem;
 }
 
-#station-info-station-layout-heading{
-    margin-top: 1rem;
-    font-size: 2rem;
-    margin-bottom: 1rem;
+#station-info-station-layout-heading {
+  margin-top: 1rem;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 #station-info-map-image {
@@ -148,24 +202,6 @@
   display: block;
 }
 
-.view-in-3d-button{
-  margin-top: 60px;
-  padding: 10px;
-  background-color: #ccc;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  font-size: 20px;
-  cursor: pointer;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-}
-
-.view-in-3d-button:hover{
-  background-color: #fff;
-  color: #000;
-}
 #stop-voice-button {
   margin-top: 10px;
   padding: 8px 12px;
@@ -180,11 +216,39 @@
   background-color: darkred;
 }
 
-.componentsDropdown{
+.station-info-functionalities {
+  margin-top: 2rem;
+  background-color: #3d5b76;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.view-in-3d-button {
+  margin-top: 2rem;
+  padding: 10px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 20px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+}
+
+.view-in-3d-button:hover {
+  background-color: #dcd7d7;
+  color: #000;
+}
+
+.componentsDropdown-label {
+  margin-right: 0.3rem;
   font-size: 20px;
 }
-#componentsDropdown{
-  font-size: 16px;
+
+#componentsDropdown {
+  margin-left: 0.4rem;
+  font-size: 20px;
 }
-
-
