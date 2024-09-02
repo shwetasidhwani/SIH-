@@ -7,6 +7,8 @@ const postMessage = async (req, res) => {
     const { message } = req.body;
     console.log(req.body, req.user);
     //console.log(req.user.id, req.user.id);
+
+    
     const chatMessage = new ChatMessage({
       user: req.user.id, 
       message

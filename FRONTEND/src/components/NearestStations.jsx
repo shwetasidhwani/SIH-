@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import "./NearestStation.css";
 
+// Example stations data (ensure this is populated from a reliable source)
 const stations = [
   // Western Line
   { name: "Churchgate", lat: 18.9351, lon: 72.8277 },
@@ -118,16 +119,29 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
   return distance;
 }
 
+function calculateTime(distance) {
+  const speed = 40; // Average speed in km/h
+  const time = distance / speed;
+  const hours = Math.floor(time);
+  const minutes = Math.round((time - hours) * 60);
+  return `${hours > 0 ? `${hours} hr ` : ''}${minutes} min`;
+}
+
+function suggestRoute(stationName) {
+  // Placeholder for route suggestion logic
+  return `Take the nearest bus/train to ${stationName}`;
+}
+
 const NearestStations = () => {
   const [userLocation, setUserLocation] = useState(null);
   const [nearestStations, setNearestStations] = useState([]);
 
-  // Fetch the user's location when the component is mounted
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
         const lat = position.coords.latitude;
         const lon = position.coords.longitude;
+        console.log('User Location:', lat, lon);
         setUserLocation({ lat, lon });
         findNearestStations(lat, lon);
       }, error => {
@@ -138,40 +152,48 @@ const NearestStations = () => {
     }
   }, []);
 
-  // Find the nearest stations by calculating the distance to each station
   const findNearestStations = (userLat, userLon) => {
     const nearbyStations = stations.map(station => {
       const distance = calculateDistance(userLat, userLon, station.lat, station.lon);
       return { ...station, distance };
     });
 
-    // Sort stations by distance
     nearbyStations.sort((a, b) => a.distance - b.distance);
-
+    console.log("Nearest Stations:", nearbyStations);
     setNearestStations(nearbyStations.slice(0, 2));
   };
 
-  return (<>
+  return (
     <div className='neareststations-outer-container'>
-    <div className='neareststations-inner-container'>
-      <h2>Nearest Mumbai Western Line Stations</h2>
-      {userLocation ? (
-        <div className='user-location-list'>
-          <h4>Your Location: {userLocation.lat}, {userLocation.lon}</h4>
-          <ul>
-            {nearestStations.map((station, index) => (
-              <li key={index}>
-                {station.name} - {station.distance.toFixed(2)} km away
-              </li>
-            ))}
-          </ul>
-        </div>
-      ) : (
-        <p>Fetching your location...</p>
-      )}
+      <div className='neareststations-inner-container'>
+        <h2 className='stations-title'>Nearest Mumbai Local Stations</h2>
+        {userLocation ? (
+          <div className='user-location-list'>
+            <div className='user-location-card'>
+              <h4 className='location-title'>Your Location</h4>
+              <p>Latitude: {userLocation.lat}</p>
+              <p>Longitude: {userLocation.lon}</p>
+            </div>
+            {nearestStations.length > 0 ? (
+              nearestStations.map((station, index) => (
+                <div key={index} className='station-card'>
+                  <h4 className='station-name'>{station.name}</h4>
+                  <p className='station-distance'>{station.distance.toFixed(2)} km away</p>
+                  <div className='station-route-time'>
+                    <p>Time: {calculateTime(station.distance)}</p>
+                    <p>Route: {suggestRoute(station.name)}</p>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <p>No nearby stations found.</p>
+            )}
+          </div>
+        ) : (
+          <p>Fetching your location...</p>
+        )}
+      </div>
     </div>
-    </div>
-    </>
   );
 };
 
