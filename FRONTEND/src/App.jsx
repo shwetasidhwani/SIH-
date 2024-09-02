@@ -49,7 +49,7 @@ import Signup from "./Authentication/Signup";
 import Logout from "./Authentication/Logout";
 import QueryComponent from "./QueryComponent/QueryComponent";
 import StationInfo from "./StationInfo/StationInfo";
-
+import ChatRoom from "./ChatRoom.jsx/ChatRoom";
 
 
 
@@ -129,6 +129,7 @@ const App = () => {
             <Route path="/signup" element={<Signup />} />
             <Route path="/query" element={<QueryComponent />} />
             <Route path="/station" element={<StationInfo/>} />
+            <Route path="/chat" element={<ChatRoom/>} />
 
 
             

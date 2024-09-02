@@ -11,7 +11,8 @@ app = express();
 
 const login = async (req, res) => {
     try{
-        console.log(req);
+        //console.log(req);
+        console.log(req.user);
         const { email, password } = req.body;
         const user = await User.findOne({email});
         //console.log(req.user.id);
